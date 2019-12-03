@@ -1,0 +1,36 @@
+.Homepage {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.Title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(95, 4, 95)
+}
+
+/* .Buttons {
+    list-style: none;
+}
+
+.Buttons a {
+    text-decoration: none;
+    color: purple;
+    position: absolute;
+} */
+
+/* register
+.Buttons a:first-child {
+    
+    bottom: 20px;
+    left: 50px;
+}
+/* login 
+.Buttons a:nth-child(2) {
+    top: 80px;
+    right: 90px;
+} */
+

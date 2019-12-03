@@ -1,0 +1,16 @@
+.AboutUs {
+    position: absolute;
+    color: rgb(206, 171, 126);
+    background-color: seashell;
+    width: 99.7%;
+    height: 81.3%;
+}
+
+.Description h1 {
+    position: relative;
+    padding-top: 3%
+}
+
+.Description h3 {
+    padding-top: 13%;
+}

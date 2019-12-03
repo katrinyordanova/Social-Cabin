@@ -11,10 +11,6 @@ function Homepage() {
             <h1>Excited?</h1>
             <h1>Let's get started!</h1>
         </div>
-        {/* <div className="Buttons">
-            <Link className="RegisterButton" to="/register">Register</Link>
-            <Link className="LoginButton" to="/login">Login</Link>
-        </div> */}
     </div>
 }
 

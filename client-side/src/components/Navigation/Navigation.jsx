@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navigation.css';
-import Link from '../shared/Link/Link';
+import Link from '../Link/Link';
 
 function Navigation() {
     return <nav className="Navigation">

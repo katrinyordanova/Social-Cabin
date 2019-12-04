@@ -1,0 +1,55 @@
+.Register {
+    background-color: seashell;
+    position: absolute;
+    width: 99.7%;
+    height: 81.5%;
+}
+
+form .Header {
+    font-size: 19px;
+    text-decoration: underline;
+    color: burlywood
+}
+
+form {
+    position: relative;
+    width: 45%;
+    margin: 0 auto;
+    top: 5%;
+}
+
+label, input {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+label {
+    width: 30%;
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 1%;
+    left: 14.6%;
+    transform: translate(-50%, -0%);
+    padding-bottom: 2%;
+    color: rgb(144, 70, 70);
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 1.5%;
+    font-size: 21px;
+}
+
+button {
+    position: relative;
+    margin-top: 2.5%;
+    background-color: rgb(159, 243, 32);
+    border: 2px solid rgb(164, 253, 31) ;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    display: inline-block;
+    font-size: 21.2px;
+    border-radius: 5px;
+}

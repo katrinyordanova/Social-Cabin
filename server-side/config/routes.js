@@ -4,5 +4,5 @@ module.exports = (app) => {
     //user
     app.use('/api/user', router.user);
     //error
-    app.get('*', (request, response) => { response.send('<h1>Something went wrong</h1>');});
+    app.get('*', (req, res) => { res.send('<h1>Something went wrong</h1>');});
 }

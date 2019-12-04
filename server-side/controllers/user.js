@@ -1,5 +1,5 @@
 const models = require('../models');
-const appConfig = require('../app-config');
+const config = require('../config/config');
 const utilities = require('../utilities');
 
 module.exports = {

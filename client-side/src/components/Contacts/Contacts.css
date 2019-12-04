@@ -1,0 +1,20 @@
+.Contacts {
+    position: absolute;
+    color: rgb(206, 171, 126);
+    background-color: seashell;
+    width: 99.7%;
+    height: 81.3%;
+}
+
+.Contacts h1 {
+    position: relative;
+    padding-top: 3%;
+}
+
+.Contacts h2 {
+    padding-bottom: 0.5%
+}
+
+.Contacts h4 {
+    padding-top: 11%
+}

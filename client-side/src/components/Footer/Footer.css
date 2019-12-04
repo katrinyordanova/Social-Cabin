@@ -1,0 +1,19 @@
+.Footer {
+    width: 100%;
+    height: 7.2vh;
+    background-color: rgb(124, 207, 237);
+    font-size: 18px;
+    border-top: 2px solid rgb(114, 206, 240); 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 2px solid rgb(114, 206, 240); 
+    position: fixed;
+    bottom: 0;
+}
+
+.Footer p {
+    display: inline-block;
+    margin-top: 0.8%;
+    text-align: center;
+    font-weight: bold;
+}

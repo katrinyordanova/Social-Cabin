@@ -1,0 +1,15 @@
+.Homepage {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.Title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(95, 4, 95)
+}
+
+

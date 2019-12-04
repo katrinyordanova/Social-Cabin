@@ -1,7 +1,7 @@
 .Homepage {
     position: relative;
     text-align: center;
-    color: black;
+    background-color: seashell;
 }
 
 .Title {
@@ -9,7 +9,8 @@
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(95, 4, 95)
+    color: rgb(95, 4, 95);
+    text-shadow: rgb(253, 253, 253) 0px 0px 2px;
 }
 
 

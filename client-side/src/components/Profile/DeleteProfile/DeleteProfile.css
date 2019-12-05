@@ -1,0 +1,65 @@
+.DeleteProfile {
+    position: relative;
+    text-align: center;
+    background-color: seashell;
+    width: 99.7%;
+    height: 81.3%;
+}
+
+.DeleteProfile div {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+}
+
+.DeleteProfile img {
+    left: 10%;
+    width: 84.5%;
+}
+
+.DeleteProfile h1 {
+    font-size: 62px;
+    text-decoration: underline;
+    color: rgb(179, 49, 49);
+    text-shadow: rgb(206, 77, 77) 0px 0px 2px;
+
+}
+
+.DeleteProfile h2 {
+    font-size: 42px;
+    text-decoration: underline;
+    text-decoration-color: rgba(202, 54, 54, 0.452);
+    color: rgb(179, 49, 49);
+    text-shadow: rgb(206, 77, 77) 0px 0px 2px;
+}
+
+.DeleteProfileButtons {
+    margin-top: 30%;
+}
+
+.DeleteProfileButtons li {
+    display: inline;
+    list-style-type: none;
+    background-color: rgb(9, 175, 161);
+    border: rgb(9, 175, 161);
+    padding: 8% 8%;
+    text-align: center;
+    font-size: 26px;
+    border-radius: 5px;
+}
+
+.DeleteProfileButtons a {
+    text-decoration: none;
+    color: white;
+}
+
+.DeleteProfileButtons li:first-child {
+    text-align: center;
+    background-color: rgb(246, 80, 80);
+}
+
+.DeleteProfileButtons li:nth-child(2) {
+    background-color: rgb(0, 186, 253);
+    margin-left: 15%;
+}

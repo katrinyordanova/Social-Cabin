@@ -1,0 +1,41 @@
+.EditProfile {
+    position: absolute;
+    text-align: center;
+    background-color: seashell;
+    width: 99.7%;
+    height: 81.3%;
+}
+
+.EditProfile h1 {
+    font-size: 40.5px;
+    text-decoration: underline;
+    color: rgba(167, 9, 9, 0.452)
+}
+
+.EditProfileButtons li {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    margin-top: 2.5%;
+    background-color: rgb(9, 175, 161);
+    border: rgb(9, 175, 161);
+    padding: 1%;
+    text-align: center;
+    display: inline-block;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+.EditProfileButtons a {
+    text-decoration: none;
+    color: white;
+}
+
+.EditProfileButtons li:first-child {
+    margin-right: 1.5%;
+    text-align: center;
+}
+
+.EditProfileButtons li:nth-child(2) {
+    background-color: rgb(246, 80, 80);
+}

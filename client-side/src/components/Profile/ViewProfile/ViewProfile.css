@@ -1,0 +1,48 @@
+.ViewProfile {
+    position: absolute;
+    text-align: center;
+    background-color: seashell;
+    width: 99.7%;
+    height: 81.3%;
+}
+
+.ViewProfile h1 {
+    font-size: 40.5px;
+    text-decoration: underline;
+    color: rgba(167, 9, 9, 0.452)
+}
+
+.Buttons li {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    margin-top: 2.5%;
+    background-color: rgb(9, 175, 161);
+    border: rgb(9, 175, 161);
+    padding: 1%;
+    text-align: center;
+    display: inline-block;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+.Buttons li:first-child {
+    margin-right: 1.5%;
+    padding-right: 1.76%;
+    padding-left: 1.76%;
+    text-align: center;
+}
+
+.Buttons li:nth-child(2) {
+    background-color: rgb(212, 47, 56);
+}
+
+.Buttons a {
+    text-decoration: none;
+    color: white;
+}
+
+.EditButton {
+    margin-right: 2%;
+    padding: 1%;
+}

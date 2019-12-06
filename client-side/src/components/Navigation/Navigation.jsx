@@ -14,6 +14,7 @@ function Navigation() {
             <Link to='/login'>Login</Link>
             <Link to='/new-post'>New Post</Link>
             <Link to='/view-profile'>Profile</Link>
+            <Link to="/my-posts">My Posts</Link>
             <Link to='/logout'>Logout</Link>
             <Link to='/contacts' id="contacts">Contacts</Link>
             <Link to='/about-us' id="about-us">About us</Link>

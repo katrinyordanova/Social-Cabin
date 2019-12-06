@@ -10,7 +10,10 @@ import Login from './components/Login/Login';
 import ViewProfile from './components/Profile/ViewProfile/ViewProfile';
 import EditProfile from './components/Profile/EditProfile/EditProfile';
 import DeleteProfile from './components/Profile/DeleteProfile/DeleteProfile';
-import NewPost from './components/Post/NewPost/NewPost';
+import NewPost from './components/Posts/NewPost/NewPost';
+import MyPosts from './components/Posts/MyPosts/MyPosts';
+import EditPost from './components/Posts/EditPost/EditPost';
+import DeletePost from './components/Posts/DeletePost/DeletePost';
 import Contacts from './components/Contacts/Contacts';
 import AboutUs from './components/AboutUs/AboutUs';
 
@@ -29,6 +32,9 @@ function App() {
                 <Route path="/edit-profile" component={EditProfile} />
                 <Route path="/delete-profile" component={DeleteProfile} />
                 <Route path="/new-post" component={NewPost} />
+                <Route path="/edit-post" component={EditPost} />
+                <Route path="/delete-post" component={DeletePost} />
+                <Route path="/my-posts" component={MyPosts} />
                 <Route path="/contacts" component={Contacts} />
                 <Route path="/about-us" component={AboutUs} />
               </Switch>

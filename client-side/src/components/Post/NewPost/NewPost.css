@@ -1,0 +1,15 @@
+.Heading {
+    font-size: 19px;
+    text-decoration: underline;
+    color: rgba(167, 9, 9, 0.452)
+}
+
+.NewPost form {
+}
+
+.Description textarea {
+    display: block;
+    position: relative;
+    border: 2px solid rgb(197, 44, 44);
+    border-radius: 12px;
+}

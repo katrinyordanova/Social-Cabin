@@ -12,7 +12,7 @@ function Navigation() {
             <Link to='/'>Home</Link>
             <Link to='/register'>Register</Link>
             <Link to='/login'>Login</Link>
-            <Link to='/create-post'>Create Post</Link>
+            <Link to='/new-post'>New Post</Link>
             <Link to='/view-profile'>Profile</Link>
             <Link to='/logout'>Logout</Link>
             <Link to='/contacts' id="contacts">Contacts</Link>

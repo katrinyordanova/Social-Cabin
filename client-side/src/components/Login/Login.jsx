@@ -21,7 +21,10 @@ class Login extends  Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        userService.login(this.props.username, this.props.password);
+        const username = this.state.username;
+        const password = this.state.password;
+        const data = {username, password};
+        userService.login(data);
         this.props.history.push('/');
     }
 

@@ -14,12 +14,14 @@ const userService = {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
-            }
+            },
+            credentials: 'include'
         }).then(res => res.json());
     },
     logout: function () {
         return fetch('http://localhost:8888/api/user/logout', {
-            method: 'POST'
+            method: 'POST',
+            credentials: 'include'
         }).then(res => res.json());
     }
 }

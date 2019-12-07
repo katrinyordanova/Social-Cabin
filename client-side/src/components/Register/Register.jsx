@@ -22,7 +22,10 @@ export default class Register extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        userService.register(this.state.username, this.state.password)
+        const username = this.state.username; 
+        const password = this.state.password; 
+        const data = {username, password};
+        userService.register(data);
         this.props.history.push('/login');        
     }
 

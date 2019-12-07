@@ -4,3 +4,7 @@
     width: 99.7%;
     height: 81.3%;
 }
+
+*:focus {
+    outline: 0;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
 import userService from '../../services/userService';
+import loginValidator from '../../utils/loginValidator/loginValidator';
 
 class Login extends  Component {
     constructor(props) {
@@ -23,9 +24,12 @@ class Login extends  Component {
         event.preventDefault();
         const username = this.state.username;
         const password = this.state.password;
-        const data = {username, password};
-        userService.login(data);
-        this.props.history.push('/');
+
+        if (loginValidator(username, password)) {
+            const data = {username, password};
+            userService.login(data);
+            this.props.history.push('/');        
+        }
     }
 
     render() {
@@ -37,11 +41,11 @@ class Login extends  Component {
                 <div className="InputFields">
                     <div className="Username">
                         <label>Username</label>
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+                        <input type="text" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleChange} />
                     </div>
                     <div className="Password">
                         <label>Password</label>
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+                        <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
                     </div>
                 </div>
                 <div className="FormButton">

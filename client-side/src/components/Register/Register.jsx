@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Register.css';
 import userService from '../../services/userService';
+import registerValidator from '../../utils/registerValidator/registerValidator';
 
 export default class Register extends Component {
     constructor(props) {
@@ -10,10 +11,11 @@ export default class Register extends Component {
             password: '',
             confirmPassword: ''
         }
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+            
     handleChange(event) {
         this.setState({
             [event.target.name] : event.target.value
@@ -23,10 +25,14 @@ export default class Register extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const username = this.state.username; 
-        const password = this.state.password; 
-        const data = {username, password};
-        userService.register(data);
-        this.props.history.push('/login');        
+        const password = this.state.password;
+        const confirmPassword = this.state.confirmPassword; 
+        
+        if(registerValidator(username, password, confirmPassword)) {
+            const data = {username, password};
+            userService.register(data);
+            this.props.history.push('/login');        
+        }
     }
 
     render() {
@@ -38,15 +44,15 @@ export default class Register extends Component {
                 <div className="InputFields">
                     <div className="Username">
                         <label>Username</label>
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+                        <input type="text" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleChange} />
                     </div>
                     <div className="Password">
                         <label>Password</label>
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+                        <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
                     </div>
                     <div className="ConfirmPassword">
                         <label>Confirm Password</label>
-                        <input type="password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleChange} />
+                        <input type="password" name="confirmPassword" placeholder="Enter confirm password" value={this.state.confirmPassword} onChange={this.handleChange} />
                     </div>
                 </div>    
                 <div className="FormButton">

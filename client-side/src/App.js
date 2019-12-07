@@ -17,6 +17,8 @@ import DeletePost from './components/Posts/DeletePost/DeletePost';
 import Contacts from './components/Contacts/Contacts';
 import AboutUs from './components/AboutUs/AboutUs';
 
+import { ToastContainer } from 'react-toastify';
+
 function App() {
   return (
       <BrowserRouter >
@@ -42,6 +44,16 @@ function App() {
           </div>
           <Footer />
         </div>
+        <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange
+        draggable
+        pauseOnHover />
       </BrowserRouter>
   );
 }

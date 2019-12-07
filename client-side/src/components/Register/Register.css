@@ -41,6 +41,12 @@ input {
     border:2px solid rgb(197, 44, 44);
     border-radius: 12px;
     background-color: rgb(255, 234, 218);
+    text-align: center;
+    color: rgb(179, 74, 74);
+}
+
+::placeholder {
+    color: rgb(179, 74, 74);
 }
 
 button {

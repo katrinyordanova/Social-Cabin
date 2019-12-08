@@ -26,6 +26,7 @@ class Login extends  Component {
         const password = this.state.password;
 
         if (loginValidator(username, password)) {
+            this.setState({ isLogged : true });
             const data = {username, password};
             userService.login(data);
             this.props.history.push('/');        

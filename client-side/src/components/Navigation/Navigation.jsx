@@ -2,22 +2,22 @@ import React from 'react';
 import './Navigation.css';
 import Link from '../Link/Link';
 
-function Navigation() {
+function Navigation({ isLogged }) {
     return <nav className="Navigation">
         <ul>
             <div className="LogoAndName">
                 <img src="/penguin.png" alt="planet-icon" id="logo" />
                 <p>Social Penguin</p>
             </div>
-            <Link to='/'>Home</Link>
-            <Link to='/register'>Register</Link>
-            <Link to='/login'>Login</Link>
-            <Link to='/new-post'>New Post</Link>
-            <Link to='/view-profile'>Profile</Link>
-            <Link to='/my-posts'>My Posts</Link>
-            <Link to='/logout'>Logout</Link>
-            <Link to='/contacts' id="contacts">Contacts</Link>
-            <Link to='/about-us' id="about-us">About us</Link>
+            { isLogged && <Link to='/'>Home</Link> }
+            { !isLogged && <Link to='/register'>Register</Link> }
+            { !isLogged && <Link to='/login'>Login</Link> }
+            { isLogged && <Link to='/new-post'>New Post</Link> }
+            { isLogged && <Link to='/view-profile'>Profile</Link> }
+            { isLogged && <Link to='/my-posts'>My Posts</Link> }
+            { isLogged && <Link to='/logout'>Logout</Link> }
+            { isLogged && <Link to='/contacts'>Contacts</Link> }
+            { isLogged && <Link to='/about-us'>About us</Link> }
         </ul>
     </nav>
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Main from './components/Main/Main';
@@ -16,29 +16,48 @@ import EditPost from './components/Posts/EditPost/EditPost';
 import DeletePost from './components/Posts/DeletePost/DeletePost';
 import Contacts from './components/Contacts/Contacts';
 import AboutUs from './components/AboutUs/AboutUs';
+import Logout from './components/Logout/Logout';
 
 import { ToastContainer } from 'react-toastify';
 
-function App() {
+function parseCookies() {
+  return document.cookie.split('; ').reduce((acc, cookie) => {
+    const [cookieName, cookieValue] = cookie.split('=');
+    acc[cookieName] = cookieValue;
+    return acc;
+  }, {})
+}
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    const cookies = parseCookies();
+    const isLogged = !!cookies['x-auth-token'];
+    this.state = { isLogged };
+  }
+
+  render() {
+  const { isLogged } = this.state;
   return (
       <BrowserRouter >
         <div className="App">
-          <Navigation />
+          <Navigation isLogged={ isLogged } />
           <div className="Container" >
             <Main>
               <Switch>
-                <Route path="/" exact component={Homepage} />
-                <Route path="/register" component={Register} />
-                <Route path="/login" component={Login} />
-                <Route path="/view-profile" component={ViewProfile} />
-                <Route path="/edit-profile" component={EditProfile} />
-                <Route path="/delete-profile" component={DeleteProfile} />
-                <Route path="/new-post" component={NewPost} />
-                <Route path="/edit-post" component={EditPost} />
-                <Route path="/delete-post" component={DeletePost} />
-                <Route path="/my-posts" component={MyPosts} />
-                <Route path="/contacts" component={Contacts} />
-                <Route path="/about-us" component={AboutUs} />
+                <Route path="/" exact component={Homepage} isLogged = { isLogged } />
+                <Route path="/register" component={Register} isLogged = { isLogged } />
+                <Route path="/login" component={Login} isLogged = { isLogged } />
+                <Route path="/logout" component={Logout} isLogged = { isLogged } />
+                <Route path="/view-profile" component={ViewProfile} isLogged = { isLogged } />
+                <Route path="/edit-profile" component={EditProfile} isLogged = { isLogged } />
+                <Route path="/delete-profile" component={DeleteProfile} isLogged = { isLogged } />
+                <Route path="/new-post" component={NewPost} isLogged = { isLogged } />
+                <Route path="/edit-post" component={EditPost} isLogged = { isLogged } />
+                <Route path="/delete-post" component={DeletePost} isLogged = { isLogged } />
+                <Route path="/my-posts" component={MyPosts} isLogged = { isLogged } />
+                <Route path="/contacts" component={Contacts} isLogged = { isLogged } />
+                <Route path="/about-us" component={AboutUs} isLogged = { isLogged } />
               </Switch>
             </Main>
           </div>
@@ -55,7 +74,7 @@ function App() {
         draggable
         pauseOnHover />
       </BrowserRouter>
-  );
+  )};
 }
 
 export default App;

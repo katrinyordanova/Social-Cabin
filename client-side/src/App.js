@@ -4,7 +4,6 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
-import Homepage from './components/Homepage/Homepage';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import ViewProfile from './components/Profile/ViewProfile/ViewProfile';
@@ -17,7 +16,8 @@ import DeletePost from './components/Posts/DeletePost/DeletePost';
 import Contacts from './components/Contacts/Contacts';
 import AboutUs from './components/AboutUs/AboutUs';
 import Logout from './components/Logout/Logout';
-import Home from './components/Home/Home';
+import GuestHomepage from './components/homepage/GuestHomepage/GuestHomepage';
+import UserHomepage from './components/homepage/UserHomepage/UserHomepage';
 
 import { ToastContainer } from 'react-toastify';
 import userService from './services/userService';
@@ -47,14 +47,14 @@ class App extends Component {
   login = (data, history) => {
     return userService.login(data).then(() => {
       this.setState({ isLogged: true });
-      history.push('/home');
+      history.push('/');
     });
   }
   
   logout = (history) => {
       userService.logout().then(() => {
       this.setState({ isLogged: false });
-      history.push('/');
+      history.push('/homepage');
       return null;
     });
   }
@@ -68,8 +68,8 @@ class App extends Component {
             <div className="Container" >
               <Main>
                 <Switch>
-                  <Route path="/" exact component={Homepage} isLogged = { isLogged } />
-                  <Route path="/home" component={Home} isLogged = { isLogged } />
+                  <Route path="/" exact component={UserHomepage} isLogged = { isLogged } />
+                  <Route path="/homepage" exact component={GuestHomepage} isLogged = { isLogged } />
                   <Route path="/register" component={Register} isLogged = { isLogged } />
                   <Route path="/login" render={render(Login, { isLogged , login: this.login }) } />
                   <Route path="/logout" render={render(Logout, { isLogged, logout: this.logout}) } />

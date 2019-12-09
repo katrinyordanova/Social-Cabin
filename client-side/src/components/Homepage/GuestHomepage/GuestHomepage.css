@@ -1,0 +1,47 @@
+.Homepage {
+    position: relative;
+    text-align: center;
+    background-color: seashell;
+}
+
+.Title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(95, 4, 95);
+    text-shadow: rgb(253, 253, 253) 0px 0px 2px;
+}
+
+.HomepageButtons {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.HomepageButtons li { 
+    list-style-type: none;
+    display: inline;
+    
+}
+
+.HomepageButtons a {
+    padding: 10%;
+    border: 1px solid rgb(95, 4, 95);
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    text-shadow: rgb(253, 253, 253) 0px 0px 2px;
+    font-size: 25px;
+    text-align: center;
+    background-color: rgb(95, 4, 95);
+}
+
+.HomepageButtons li:first-child {
+    margin-left: -25%;
+}
+
+.HomepageButtons li:nth-child(2) {
+    margin-left: 15%;
+}

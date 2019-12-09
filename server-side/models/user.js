@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String
-    }
+    },
+    posts: [{ type: mongoose.Types.ObjectId, ref: 'Post'}]
 });
 
 userSchema.methods = {

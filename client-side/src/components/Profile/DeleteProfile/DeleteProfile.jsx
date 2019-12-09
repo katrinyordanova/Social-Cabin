@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './DeleteProfile.css';
-import Link from '../../Link/Link';
+import Link from '../../links/Link';
 
 class DeleteProfile extends Component {
     render() {

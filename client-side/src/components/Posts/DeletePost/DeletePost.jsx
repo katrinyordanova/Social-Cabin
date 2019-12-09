@@ -1,7 +1,8 @@
 import React , { Component } from 'react';
 import './DeletePost.css';
 import postService from '../../../services/postService';
-import Link from '../../Link/Link';
+import Link from '../../links/Link';
+
 
 class DeletePost extends Component {
     constructor(props) {

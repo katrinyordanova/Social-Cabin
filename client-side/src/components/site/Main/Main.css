@@ -1,0 +1,10 @@
+.Main {
+    position: absolute;
+    background-color: rgb(253, 233, 219);
+    width: 99.7%;
+    height: 81.3%;
+}
+
+*:focus {
+    outline: 0;
+}

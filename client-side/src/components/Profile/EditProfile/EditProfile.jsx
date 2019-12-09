@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './EditProfile.css';
-import Link from '../../Link/Link';
+import Link from '../../links/Link';
 
 class EditProfile extends Component {
     render() {

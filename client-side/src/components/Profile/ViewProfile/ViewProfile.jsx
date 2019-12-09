@@ -1,6 +1,6 @@
 import React from 'react';
 import './ViewProfile.css';
-import Link from '../../Link/Link';
+import Link from '../../links/Link';
 
 function ViewProfile() {
     return <div className="ViewProfile">

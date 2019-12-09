@@ -1,6 +1,6 @@
 import React from 'react';
 import './GuestHomepage.css';
-import Link from '../../Link/Link';
+import Link from '../../links/Link';
 
 export default function GuestHomepage() {
     return <div className="Homepage">

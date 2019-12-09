@@ -1,11 +1,15 @@
 import React from 'react';
 import './Post.css';
+import Link from '../../links/Link';
 
-function Post() {
+function Post({ children, author }) {
     return <div className="Post">
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <small>{author}</small>
+        {children}
+        {/* {author} */}
+        <div className="PostButtons">
+            <Link to="/edit-post">Edit</Link>
+            <Link to="/delete-post">Delete</Link>
+        </div>
     </div>
 }
 

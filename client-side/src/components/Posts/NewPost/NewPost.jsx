@@ -7,9 +7,9 @@ class NewPost extends Component {
         super(props);
         this.state = {
             title: '',
-            description: '',
-            author: ''
+            description: 'What\'s on your mind?',
         }
+        this.fileInput = React.createRef();
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -22,10 +22,14 @@ class NewPost extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const data = '';
+        const title = this.state.title;
+        const description = this.state.description;
+        const image = this.fileInput.current.files[0].name;
+        const data = { title, description, image };
+        console.log(data);
         postService.createPost(data).then(() => {
-            this.props.history.push('/my-posts');
-        });
+            this.props.history.push('/');
+        }).catch(() => {alert('create post error'); return;})
     }
 
     render() {
@@ -40,11 +44,11 @@ class NewPost extends Component {
                 </div>
                 <div className="Description">
                     <label>Description</label>
-                    <textarea name="description" id="description" cols="30" rows="7"></textarea>
+                    <textarea name="description" value = {this.state.value} onChange = {this.handleChange} cols="30" rows="7" />
                 </div>
-                <div className="Author">
-                    <label>Author</label>
-                    <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
+                <div className="UploadFile">
+                    <label>Upload File</label>
+                    <input type="file" ref={this.fileInput} />
                 </div>
                 <button type="button" onClick={this.handleSubmit}>Submit</button>
             </form>

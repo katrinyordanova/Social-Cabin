@@ -1,23 +1,22 @@
 const postService = {
-    allPosts: function(id) {
+    getPost: function(id) {
         return fetch (`http://localhost:8888/api/post/${id}`).then(res => res.json());
     },
-    getPost: function(data) {
-        return fetch ('http://localhost:8888/api/post/createPost', {
-            
-        });
+    allPosts: function(id) {
+        return fetch ('http://localhost:8888/api/post/all-posts').then(res => res.json());
     },
     createPost: function(data) {
-        return fetch('http://localhost:8888/api/post/createPost', {
+        return fetch('http://localhost:8888/api/post/create-post', {
             body: JSON.stringify(data),
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
-            }
+            },
+            credentials: 'include'
         }).then(res => res.json());
     },
     editPost: function(data) {
-        return fetch ('http://localhost:8888/api/post/editPost', {
+        return fetch ('http://localhost:8888/api/post/edit-post', {
             body: JSON.stringify(data),
             method: 'POST',
             headers: {
@@ -26,7 +25,7 @@ const postService = {
         }).then(res => res.json);
     },
     deletePost: function(data) {
-        return fetch ('http://localhost:8888/api/post/deletePost', {
+        return fetch ('http://localhost:8888/api/post/delete-post', {
             method: 'POST'
         });
     }

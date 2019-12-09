@@ -1,0 +1,21 @@
+.Post {
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: 50%;
+    width: 50%;
+    margin: 2% auto;
+}
+
+.PostButtons li{
+    display: inline-block;
+    list-style-type: none;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.PostButtons a{
+    text-decoration: none;
+    color:black;
+    font-size: 23.5px;
+}

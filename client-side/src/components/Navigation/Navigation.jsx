@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{ Component }  from 'react';
 import './Navigation.css';
 import Link from '../Link/Link';
 
-function Navigation({ isLogged }) {
+class Navigation extends Component {   
+    render() {
+        const { isLogged } = this.props;
     return <nav className="Navigation">
         <ul>
             <div className="LogoAndName">
@@ -10,8 +12,6 @@ function Navigation({ isLogged }) {
                 <p>Social Penguin</p>
             </div>
             { isLogged && <Link to='/'>Home</Link> }
-            { !isLogged && <Link to='/register'>Register</Link> }
-            { !isLogged && <Link to='/login'>Login</Link> }
             { isLogged && <Link to='/new-post'>New Post</Link> }
             { isLogged && <Link to='/view-profile'>Profile</Link> }
             { isLogged && <Link to='/my-posts'>My Posts</Link> }
@@ -20,6 +20,7 @@ function Navigation({ isLogged }) {
             { isLogged && <Link to='/about-us'>About us</Link> }
         </ul>
     </nav>
+    }
 }
 
 export default Navigation;

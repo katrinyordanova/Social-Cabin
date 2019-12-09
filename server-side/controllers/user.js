@@ -6,6 +6,12 @@ module.exports = {
 	post: {
         register: (req, res, next) => {
             const { username, password } = req.body;
+            models.user.findOne({ username }).then((user) => {
+                if(user === username) {
+                    res.status(401).send('User already exists');
+                    return;
+                }
+            });
             models.user.create({ username, password})
                 .then((createdUser) => res.send(createdUser))
                 .catch(next);
@@ -13,7 +19,7 @@ module.exports = {
         login: (req, res, next) => {
             const { username, password } = req.body;
             models.user.findOne({ username })
-                .then((user) => Promise.all([ user, user.matchPassword(password)]))
+                .then((user) => !!user ? Promise.all([user, user.matchPassword(password)]) : [null, false])
                 .then(([ user, match ]) => {
                 if(!match) {
                     res.status(401).send('Invalid username or password');

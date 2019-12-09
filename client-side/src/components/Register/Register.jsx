@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Register.css';
 import userService from '../../services/userService';
 import registerValidator from '../../utils/registerValidator/registerValidator';
+import { toast } from 'react-toastify';
 
 export default class Register extends Component {
     constructor(props) {
@@ -30,8 +31,12 @@ export default class Register extends Component {
         
         if(registerValidator(username, password, confirmPassword)) {
             const data = {username, password};
-            userService.register(data);
-            this.props.history.push('/login');        
+            userService.register(data).then(() => {
+                this.props.history.push('/login');        
+            }).catch(() => {
+                toast.error('The username is already taken');
+                return;
+            });
         }
     }
 

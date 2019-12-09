@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
-import userService from '../../services/userService';
 import loginValidator from '../../utils/loginValidator/loginValidator';
+import { toast } from 'react-toastify';
 
 class Login extends  Component {
     constructor(props) {
@@ -28,8 +28,10 @@ class Login extends  Component {
         if (loginValidator(username, password)) {
             this.setState({ isLogged : true });
             const data = {username, password};
-            userService.login(data);
-            this.props.history.push('/');        
+            this.props.login(data, this.props.history).catch(error => {
+                toast.error('Invalid username or password!');
+                return;
+            });
         }
     }
 

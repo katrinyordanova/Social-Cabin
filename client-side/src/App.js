@@ -17,8 +17,16 @@ import DeletePost from './components/Posts/DeletePost/DeletePost';
 import Contacts from './components/Contacts/Contacts';
 import AboutUs from './components/AboutUs/AboutUs';
 import Logout from './components/Logout/Logout';
+import Home from './components/Home/Home';
 
 import { ToastContainer } from 'react-toastify';
+import userService from './services/userService';
+
+function render(Cmp, otherProps) {
+  return function (props) {
+    return <Cmp {...props} {...otherProps}/>
+  };
+}
 
 function parseCookies() {
   return document.cookie.split('; ').reduce((acc, cookie) => {
@@ -35,46 +43,62 @@ class App extends Component {
     const isLogged = !!cookies['x-auth-token'];
     this.state = { isLogged };
   }
+  
+  login = (data, history) => {
+    return userService.login(data).then(() => {
+      this.setState({ isLogged: true });
+      history.push('/home');
+    });
+  }
+  
+  logout = (history) => {
+      userService.logout().then(() => {
+      this.setState({ isLogged: false });
+      history.push('/');
+      return null;
+    });
+  }
 
   render() {
-  const { isLogged } = this.state;
-  return (
-      <BrowserRouter >
-        <div className="App">
-          <Navigation isLogged={ isLogged } />
-          <div className="Container" >
-            <Main>
-              <Switch>
-                <Route path="/" exact component={Homepage} isLogged = { isLogged } />
-                <Route path="/register" component={Register} isLogged = { isLogged } />
-                <Route path="/login" component={Login} isLogged = { isLogged } />
-                <Route path="/logout" component={Logout} isLogged = { isLogged } />
-                <Route path="/view-profile" component={ViewProfile} isLogged = { isLogged } />
-                <Route path="/edit-profile" component={EditProfile} isLogged = { isLogged } />
-                <Route path="/delete-profile" component={DeleteProfile} isLogged = { isLogged } />
-                <Route path="/new-post" component={NewPost} isLogged = { isLogged } />
-                <Route path="/edit-post" component={EditPost} isLogged = { isLogged } />
-                <Route path="/delete-post" component={DeletePost} isLogged = { isLogged } />
-                <Route path="/my-posts" component={MyPosts} isLogged = { isLogged } />
-                <Route path="/contacts" component={Contacts} isLogged = { isLogged } />
-                <Route path="/about-us" component={AboutUs} isLogged = { isLogged } />
-              </Switch>
-            </Main>
+    const { isLogged } = this.state;
+    return (
+        <BrowserRouter >
+          <div className="App">
+            <Navigation isLogged={ isLogged } />
+            <div className="Container" >
+              <Main>
+                <Switch>
+                  <Route path="/" exact component={Homepage} isLogged = { isLogged } />
+                  <Route path="/home" component={Home} isLogged = { isLogged } />
+                  <Route path="/register" component={Register} isLogged = { isLogged } />
+                  <Route path="/login" render={render(Login, { isLogged , login: this.login }) } />
+                  <Route path="/logout" render={render(Logout, { isLogged, logout: this.logout}) } />
+                  <Route path="/view-profile" component={ViewProfile} isLogged = { isLogged } />
+                  <Route path="/edit-profile" component={EditProfile} isLogged = { isLogged } />
+                  <Route path="/delete-profile" component={DeleteProfile} isLogged = { isLogged } />
+                  <Route path="/new-post" component={NewPost} isLogged = { isLogged } />
+                  <Route path="/edit-post" component={EditPost} isLogged = { isLogged } />
+                  <Route path="/delete-post" component={DeletePost} isLogged = { isLogged } />
+                  <Route path="/my-posts" component={MyPosts} isLogged = { isLogged } />
+                  <Route path="/contacts" component={Contacts} isLogged = { isLogged } />
+                  <Route path="/about-us" component={AboutUs} isLogged = { isLogged } />
+                </Switch>
+              </Main>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-        <ToastContainer
-        position="top-center"
-        autoClose={4000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange
-        draggable
-        pauseOnHover />
-      </BrowserRouter>
-  )};
+          <ToastContainer
+          position="top-center"
+          autoClose={4000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover />
+        </BrowserRouter>
+    )};
 }
 
 export default App;

@@ -6,7 +6,7 @@ const userService = {
             headers: {
                 'Content-type': 'application/json'
             }
-        }).then(res => res.json());
+        }).then(res => res.json().then(json => res.status === 200 ? json : Promise.reject(json)));
     },
     login: function (data) {
         return fetch('http://localhost:8888/api/user/login', {
@@ -16,13 +16,13 @@ const userService = {
                 'Content-type': 'application/json'
             },
             credentials: 'include'
-        }).then(res => res.json());
+        }).then(res => res.text().then(text => res.status === 200 ? text : Promise.reject(text)));
     },
     logout: function () {
         return fetch('http://localhost:8888/api/user/logout', {
             method: 'POST',
             credentials: 'include'
-        }).then(res => res.json());
+        }).then(res => res.text());
     }
 }
 

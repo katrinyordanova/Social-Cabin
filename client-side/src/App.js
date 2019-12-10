@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import Main from './components/site/Main/Main';
 import Navigation from './components/site/Navigation/Navigation';
 import Footer from './components/site/Footer/Footer';
@@ -22,9 +22,9 @@ import UserHomepage from './components/homepage/UserHomepage/UserHomepage';
 import { ToastContainer } from 'react-toastify';
 import userService from './services/userService';
 
-function render(Cmp, otherProps) {
+function render(Cmp, { isLogged, ...otherProps}, isProtected) {
   return function (props) {
-    return <Cmp {...props} {...otherProps}/>
+    return !isProtected && !isLogged ? <Cmp {...props} {...otherProps}/> : <Redirect to="/homepage" />
   };
 }
 
@@ -68,20 +68,20 @@ class App extends Component {
             <div className="Container" >
               <Main>
                 <Switch>
-                  <Route path="/" exact component={UserHomepage} isLogged = { isLogged } />
-                  <Route path="/homepage" exact component={GuestHomepage} isLogged = { isLogged } />
-                  <Route path="/register" component={Register} isLogged = { isLogged } />
-                  <Route path="/login" render={render(Login, { isLogged , login: this.login }) } />
-                  <Route path="/logout" render={render(Logout, { isLogged, logout: this.logout}) } />
-                  <Route path="/view-profile" component={ViewProfile} isLogged = { isLogged } />
-                  <Route path="/edit-profile" component={EditProfile} isLogged = { isLogged } />
-                  <Route path="/delete-profile" component={DeleteProfile} isLogged = { isLogged } />
-                  <Route path="/new-post" component={NewPost} isLogged = { isLogged } />
-                  <Route path="/edit-post" component={EditPost} isLogged = { isLogged } />
-                  <Route path="/delete-post" component={DeletePost} isLogged = { isLogged } />
-                  <Route path="/my-posts" component={MyPosts} isLogged = { isLogged } />
-                  <Route path="/contacts" component={Contacts} isLogged = { isLogged } />
-                  <Route path="/about-us" component={AboutUs} isLogged = { isLogged } />
+                  <Route path="/" exact render={render(UserHomepage, { isLogged }, true)} />
+                  <Route path="/homepage" exact render={render(GuestHomepage, { isLogged }, false)} />
+                  <Route path="/register" exact render={render(Register, { isLogged }, false)} />
+                  <Route path="/login" exact render={render(Login, { isLogged , login: this.login }, false) } />
+                  <Route path="/logout" exact render={render(Logout, { isLogged, logout: this.logout}, true) } />
+                  <Route path="/view-profile" exact render={render(ViewProfile, { isLogged }, true)} />
+                  <Route path="/edit-profile" exact render={render(EditProfile, { isLogged }, true)} />
+                  <Route path="/delete-profile" exact render={render(DeleteProfile, { isLogged }, true)} />
+                  <Route path="/new-post" exact render={render(NewPost, { isLogged }, true)} />
+                  <Route path="/edit-post" exact render={render(EditPost, { isLogged }, true)} />
+                  <Route path="/delete-post" exact render={render(DeletePost, { isLogged }, true)} />
+                  <Route path="/my-posts" exact render={render(MyPosts, { isLogged }, true)} />
+                  <Route path="/contacts" exact render={render(Contacts, { isLogged }, true)} />
+                  <Route path="/about-us" exact render={render(AboutUs, { isLogged }, true)} />
                 </Switch>
               </Main>
             </div>

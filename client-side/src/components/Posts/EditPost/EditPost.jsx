@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './EditPost.css';
+import '../../shared-styles/UserForm/UserForm.css';
+import '../../shared-styles/ProfileAndPostForms/ProfileAndPostForms.css'
 import postService from '../../../services/postService';
 
 class EditPost extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            title: '',
+            description: 'What\'s on your mind'
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,9 +23,14 @@ class EditPost extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        postService.editPost();
-        //push to edited post
-        this.props.history.push();
+        const title = this.state.title;
+        const description = this.state.description;
+        console.log(this.props);
+        const postId = this.props.location.key;
+        const data = { title, description };
+        postService.edit(postId, data).then(() => {
+            this.props.history.push();
+        });
     }
 
     render() {
@@ -31,17 +39,13 @@ class EditPost extends Component {
                 <h1>Edit post</h1>
             </div>
             <form>
-                <div className="Title">
+                <div>
                     <label>Title</label>
                     <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
                 </div>
-                <div className="Description">
+                <div>
                     <label>Description</label>
-                    <textarea name="description" id="description" cols="30" rows="7"></textarea>
-                </div>
-                <div className="Author">
-                    <label>Author</label>
-                    <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
+                    <textarea name="description" id="description" cols="40" rows="10"></textarea>
                 </div>
                 <button type="button" onClick={this.handleSubmit}>Submit</button>
             </form>

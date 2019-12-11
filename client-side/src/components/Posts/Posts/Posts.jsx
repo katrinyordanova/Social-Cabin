@@ -10,7 +10,7 @@ export default class Posts extends Component {
     textInput = null;
 
     componentDidMount() {
-        postService.allPosts().then(posts => {
+        postService.getAll().then(posts => {
             this.setState({ posts });
         });
     }
@@ -21,8 +21,13 @@ export default class Posts extends Component {
         return <div>
             {posts ? 
                 <div className="Posts">
-                    {posts.map((post) => 
-                    <Post className="Post" key={post._id} author={post.author}>{post.description}< br/>{post.image}</Post>)}
+                    {posts.map((post) =>
+                    <Post className="Post" key={post._id} >
+                    <div className="PostTitle">{post.title}</div>
+                    <div className="PostDescription">{post.description}</div>
+                    <div className="PostAuthor">By {post.author[0].username}</div>
+                    </Post>
+                    )}
                 </div> : <div>Loading...</div>
             }
         </div>

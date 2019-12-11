@@ -7,10 +7,10 @@ const postSchema = new mongoose.Schema ({
     description: {
         type: String
     },
-    image: {
-        type: String
-    },
-    // author: [{ type: mongoose.Types.ObjectId, ref: 'User'}]
+    // image: {
+    //     type: String
+    // },
+    author: [{ type: mongoose.Types.ObjectId, ref: 'User'}]
 });
 
 module.exports = mongoose.model('Post', postSchema);

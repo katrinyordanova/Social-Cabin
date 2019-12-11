@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Login.css';
-import loginValidator from '../../../utils/loginValidator/loginValidator';
+import '../../shared-styles/UserForm/UserForm.css';
+import loginValidator from '../../../utils/userValidations/loginValidator/loginValidator';
 import { toast } from 'react-toastify';
 
 class Login extends  Component {
@@ -37,10 +37,10 @@ class Login extends  Component {
 
     render() {
         return <div className="Login">
+            <div className="Header">
+                <h1>Login</h1>
+            </div>
             <form className="LoginForm">
-                <div className="Header">
-                    <h1>Login</h1>
-                </div>
                 <div className="InputFields">
                     <div className="Username">
                         <label>Username</label>

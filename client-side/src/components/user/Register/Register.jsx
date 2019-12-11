@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Register.css';
+import '../../shared-styles/UserForm/UserForm.css';
 import userService from '../../../services/userService';
-import registerValidator from '../../../utils/registerValidator/registerValidator';
+import registerValidator from '../../../utils/userValidations/registerValidator/registerValidator';
 import { toast } from 'react-toastify';
 
 export default class Register extends Component {
@@ -42,10 +42,10 @@ export default class Register extends Component {
 
     render() {
         return <div className="Register">
+            <div className="Header">
+                <h1>Register</h1>
+            </div>
             <form className="RegisterForm">
-                <div className="Header">
-                    <h1>Register</h1>
-                </div>
                 <div className="InputFields">
                     <div className="Username">
                         <label>Username</label>

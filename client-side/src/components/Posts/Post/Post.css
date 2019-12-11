@@ -1,21 +1,48 @@
 .Post {
     border: 1px solid #000;
     border-radius: 10px;
-    height: 50%;
-    width: 50%;
+    margin: 2% 30%;
+    background-color: rgb(145, 200, 204);
+}
+
+.PostTitle {
+    font-size: 41px;
+    color: rgb(231, 228, 198);
+}
+
+.PostDescription {
+    font-size: 30px;
+    color: darkblue;
+}
+
+.PostAuthor {
+    font-size: 18px;
+    color: rgb(27, 77, 18);
+}
+
+.PostButtons {
     margin: 2% auto;
 }
 
 .PostButtons li{
     display: inline-block;
     list-style-type: none;
-    border: 2px solid grey;
     border-radius: 5px;
     padding: 12px;
+    margin: 0 1%;
 }
+
+.PostButtons li:first-child {
+    background-color: rgb(9, 175, 161);
+    border: rgb(9, 175, 161);
+}
+
+.PostButtons li:nth-child(2) {
+    background-color: rgb(212, 47, 56);
+} 
 
 .PostButtons a{
     text-decoration: none;
-    color:black;
+    color:rgb(34, 33, 33);
     font-size: 23.5px;
 }

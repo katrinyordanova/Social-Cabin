@@ -21,7 +21,6 @@ import UserHomepage from './components/homepage/UserHomepage/UserHomepage';
 
 import { ToastContainer } from 'react-toastify';
 import userService from './services/userService';
-// import ProtectedRoute from './components/authentication/ProtectedRoute/ProtectedRoute';
 
 function render(Cmp, { isLogged, ...otherProps }, isProtected) {
   return function (props) {
@@ -79,11 +78,11 @@ class App extends Component {
                   <Route path="/login" exact render={render(Login, { isLogged , login: this.login }, true) } />
                   <Route path="/logout" exact render={render(Logout, { isLogged, logout: this.logout}, false) } />
                   <Route path="/view-profile" exact render={render(ViewProfile, { isLogged }, false)} />
-                  <Route path="/edit-profile" exact render={render(EditProfile, { isLogged }, false)} />
-                  <Route path="/delete-profile" exact render={render(DeleteProfile, { isLogged }, false)} />
+                  <Route path="/edit-profile/:id" exact render={render(EditProfile, { isLogged }, false)} />
+                  <Route path="/delete-profile/:id" exact render={render(DeleteProfile, { isLogged }, false)} />
                   <Route path="/new-post" exact render={render(NewPost, { isLogged }, false)} />
-                  <Route path="/edit-post" exact render={render(EditPost, { isLogged }, false)} />
-                  <Route path="/delete-post" exact render={render(DeletePost, { isLogged }, false)} />
+                  <Route path="/edit-post/:id" exact render={render(EditPost, { isLogged }, false)} />
+                  <Route path="/delete-post/:id" exact render={render(DeletePost, { isLogged }, false)} />
                   <Route path="/my-posts" exact render={render(MyPosts, { isLogged }, false)} />
                   <Route path="/contacts" exact render={render(Contacts, { isLogged }, false)} />
                   <Route path="/about-us" exact render={render(AboutUs, { isLogged }, false)} />
@@ -94,7 +93,7 @@ class App extends Component {
           </div>
           <ToastContainer
           position="top-center"
-          autoClose={4000}
+          autoClose={5000}
           hideProgressBar
           newestOnTop
           closeOnClick

@@ -9,12 +9,12 @@ module.exports = (redirectAuthenticated = true) => {
 
     Promise.all([
       jwt.verifyToken(token),
-      models.TokenBlacklist.findOne({ token })
+      models.tokenBlacklist.findOne({ token })
     ])
       .then(([data, blacklistToken]) => {
         if (blacklistToken) { return Promise.reject(new Error('blacklisted token')) }
 
-        models.User.findById(data.id)
+        models.user.findById(data.id)
           .then((user) => {
             req.user = user;
             next();
@@ -27,9 +27,7 @@ module.exports = (redirectAuthenticated = true) => {
           res.status(401).send('UNAUTHORIZED!');
           return;
         }
-
         next(err);
-      })
+      });
   }
-
 };

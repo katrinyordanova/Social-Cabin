@@ -48,10 +48,6 @@ class DeletePost extends Component {
                     <label>Description</label>
                     <textarea name="description" id="description" cols="30" rows="7" disabled={true}></textarea>
                 </div>
-                <div className="Author">
-                    <label>Author</label>
-                    <input type="text" name="author" value={this.state.author} disabled={true} />
-                </div>
                 <button type="button" onClick={this.handleSubmit}>Submit</button>
             </form>
         </div>

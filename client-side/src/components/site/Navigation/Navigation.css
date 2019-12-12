@@ -1,9 +1,9 @@
 .Navigation {
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 10.1vh;
     background-color: brown;
-    position: fixed;
-    top: 0;
     border-bottom: 2px solid brown;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

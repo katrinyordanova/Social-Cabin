@@ -25,7 +25,7 @@ export default class Posts extends Component {
                     <Post className="Post" key={post._id} >
                     <div className="PostTitle">{post.title}</div>
                     <div className="PostDescription">{post.description}</div>
-                    <div className="PostAuthor">By {post.author[0].username}</div>
+                    <div className="PostAuthor">By: {post.author[0].username}</div>
                     </Post>
                     )}
                 </div> : <div>Loading...</div>

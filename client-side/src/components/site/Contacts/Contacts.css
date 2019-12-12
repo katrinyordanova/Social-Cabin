@@ -1,19 +1,26 @@
 .Contacts {
-    position: absolute;
     color: rgb(206, 171, 126);
-    width: 99.7%;
-    height: 81.3%;
 }
 
 .Contacts h1 {
-    position: relative;
-    padding-top: 3%;
+    padding-top: 2%;
+    text-decoration: underline;
 }
 
 .Contacts h2 {
-    padding-bottom: 0.5%
+    padding-bottom: 0.3%
+}
+
+.Contacts h4, h5 {
+    position: fixed;
 }
 
 .Contacts h4 {
-    padding-top: 11%
+    bottom: 70px;
+    left: 43%;
+}
+
+.Contacts h5 {
+    bottom: 46px;
+    left: 44.8%;
 }

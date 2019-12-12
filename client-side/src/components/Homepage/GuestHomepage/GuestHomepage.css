@@ -1,32 +1,32 @@
 .Homepage {
-    position: relative;
-    text-align: center;
-    background-color: seashell;
+    position: relative
 }
 
-.Title {
+.GuestHomepageGif {
     position: absolute;
-    top: 35%;
+    transform: translate(15%, -6.7%);
+}
+
+.GuestHomepageTitle {
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 5%);
     color: rgb(95, 4, 95);
     text-shadow: rgb(253, 253, 253) 0px 0px 2px;
 }
 
-.HomepageButtons {
+.GuestHomepageButtons {
     position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 45%;
+    top: 67%;
 }
 
-.HomepageButtons li { 
+.GuestHomepageButtons li { 
     list-style-type: none;
     display: inline;
-    
 }
 
-.HomepageButtons a {
+.GuestHomepageButtons a {
     padding: 10%;
     border: 1px solid rgb(95, 4, 95);
     border-radius: 10px;
@@ -38,10 +38,10 @@
     background-color: rgb(95, 4, 95);
 }
 
-.HomepageButtons li:first-child {
+.GuestHomepageButtons li:first-child {
     margin-left: -25%;
 }
 
-.HomepageButtons li:nth-child(2) {
+.GuestHomepageButtons li:nth-child(2) {
     margin-left: 15%;
 }

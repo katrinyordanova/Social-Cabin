@@ -1,15 +1,13 @@
 .AboutUs {
-    position: absolute;
     color: rgb(206, 171, 126);
-    width: 99.7%;
-    height: 81.3%;
 }
 
-.Description h1 {
-    position: relative;
-    padding-top: 3%
+.AboutUs h1 {
+    text-decoration: underline;
 }
 
-.Description h3 {
-    padding-top: 13%;
+.AboutUs h3 {
+    position: fixed;
+    bottom: 50px;
+    left: 40%;
 }

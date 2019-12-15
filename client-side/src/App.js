@@ -6,18 +6,19 @@ import Navigation from './components/site/Navigation/Navigation';
 import Footer from './components/site/Footer/Footer';
 import Register from './components/user/Register/Register';
 import Login from './components/user/Login/Login';
-import ViewProfile from './components/profile/ViewProfile/ViewProfile';
-import EditProfile from './components/profile/EditProfile/EditProfile';
-import DeleteProfile from './components/profile/DeleteProfile/DeleteProfile';
+// import ViewProfile from './components/profile/ViewProfile/ViewProfile';
+// import EditProfile from './components/profile/EditProfile/EditProfile';
+// import DeleteProfile from './components/profile/DeleteProfile/DeleteProfile';
 import NewPost from './components/posts/NewPost/NewPost';
-import MyPosts from './components/posts/MyPosts/MyPosts';
-import EditPost from './components/posts/EditPost/EditPost';
-import DeletePost from './components/posts/DeletePost/DeletePost';
+// import MyPosts from './components/posts/MyPosts/MyPosts';
+// import EditPost from './components/posts/EditPost/EditPost';
+// import DeletePost from './components/posts/DeletePost/DeletePost';
 import Contacts from './components/site/Contacts/Contacts';
 import AboutUs from './components/site/AboutUs/AboutUs';
 import Logout from './components/user/Logout/Logout';
 import GuestHomepage from './components/homepage/GuestHomepage/GuestHomepage';
 import UserHomepage from './components/homepage/UserHomepage/UserHomepage';
+import NotFound from './components/site/NotFound/NotFound';
 
 import { ToastContainer } from 'react-toastify';
 import userService from './services/userService';
@@ -77,15 +78,16 @@ class App extends Component {
                   <Route path="/register" exact render={render(Register, { isLogged }, true)} />
                   <Route path="/login" exact render={render(Login, { isLogged , login: this.login }, true) } />
                   <Route path="/logout" exact render={render(Logout, { isLogged, logout: this.logout}, false) } />
-                  <Route path="/view-profile" exact render={render(ViewProfile, { isLogged }, false)} />
+                  {/* <Route path="/view-profile" exact render={render(ViewProfile, { isLogged }, false)} />
                   <Route path="/edit-profile/:id" exact render={render(EditProfile, { isLogged }, false)} />
-                  <Route path="/delete-profile/:id" exact render={render(DeleteProfile, { isLogged }, false)} />
+                  <Route path="/delete-profile/:id" exact render={render(DeleteProfile, { isLogged }, false)} /> */}
                   <Route path="/new-post" exact render={render(NewPost, { isLogged }, false)} />
-                  <Route path="/edit-post/:id" exact render={render(EditPost, { isLogged }, false)} />
+                  {/* <Route path="/edit-post/:id" exact render={render(EditPost, { isLogged }, false)} />
                   <Route path="/delete-post/:id" exact render={render(DeletePost, { isLogged }, false)} />
-                  <Route path="/my-posts" exact render={render(MyPosts, { isLogged }, false)} />
+                  <Route path="/my-posts" exact render={render(MyPosts, { isLogged }, false)} /> */}
                   <Route path="/contacts" exact render={render(Contacts, { isLogged }, false)} />
                   <Route path="/about-us" exact render={render(AboutUs, { isLogged }, false)} />
+                  <Route path="*" exact render={render(NotFound, { isLogged })} />
                 </Switch>
               </Main>
             </div>

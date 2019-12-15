@@ -10,7 +10,7 @@ export default class Posts extends Component {
     textInput = null;
 
     componentDidMount() {
-        postService.getAll().then(posts => {
+        postService.get.many().then(posts => {
             this.setState({ posts });
         });
     }
@@ -26,8 +26,11 @@ export default class Posts extends Component {
                     <div className="PostTitle">{post.title}</div>
                     <div className="PostDescription">{post.description}</div>
                     <div className="PostAuthor">By: {post.author[0].username}</div>
-                    </Post>
-                    )}
+                    {/* <div className="PostButtons">
+                        <a href={"/edit-post/" + post._id}>Edit</a>
+                        <a href={"/delete-post/" + post._id}>Delete</a>
+                    </div> */}
+                    </Post>)}
                 </div> : <div>Loading...</div>
             }
         </div>

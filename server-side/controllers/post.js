@@ -1,10 +1,19 @@
 const models = require('../models');
 
 module.exports = {
-    get: (req, res, next) => {
-            models.post.find().populate('author')
-            .then((posts) => res.send(posts)
-        ).catch;
+    get: {
+        many: (req, res, next) => {
+                models.post.find().populate('author').populate('likes')
+                .then((posts) => res.send(posts)
+            ).catch(next);
+        },
+        one: (req, res, next) => {
+            const id = req.params.id;
+        
+            models.post.findOne(id)
+            .then((posts) => res.send(posts))
+            .catch(next);
+        }
     },
     post: (req, res, next)  => {
         const { title, description } = req.body;
@@ -28,9 +37,15 @@ module.exports = {
 
         models.post.updateOne({ _id: id}, { title, description }).then((updatedPost) => {
             res.send(updatedPost)
-        }).catch(error);
+        }).catch(next);
     },
-    // delete: {
+    delete: (req, res, next) => {
+        const { title, description } = req.body;
+        const id = req.params.id;
 
-    // }
+        models.post.deleteOne({ _id: id }, { title, description })
+        .then((deletedPost) => {
+            res.send(deletedPost);
+        }).catch(next);
+    }
 }

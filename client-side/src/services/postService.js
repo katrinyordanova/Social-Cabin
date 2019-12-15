@@ -1,9 +1,13 @@
 const postService = {
-    getOne: function(id) {
-        return fetch (`http://localhost:8888/api/post/${id}`).then(res => res.json());
-    },
-    getAll: function() {
-        return fetch ('http://localhost:8888/api/post/all-posts').then(res => res.json());
+    get: {
+        many: function() {
+            return fetch ('http://localhost:8888/api/post/all-posts')
+            .then(res => res.json());
+        },
+        one: function(id) {
+            return fetch (`http://localhost:8888/api/post/${id}`)
+            .then(res => res.text());
+        }
     },
     create: function(data) {
         return fetch('http://localhost:8888/api/post/create-post', {
@@ -17,17 +21,17 @@ const postService = {
     },
     edit: function(id, data) {
         return fetch (`http://localhost:8888/api/post/edit-post/${id}`, {
+            method: 'PUT',
             body: JSON.stringify(data),
-            method: 'POST',
             headers: {
                 'Content-type': 'application/json'
             }
-        }).then(res => res.text);
+        }).then(res => res.json());
     },
     delete: function(id, data) {
         return fetch (`http://localhost:8888/api/post/delete-post/${id}`, {
-            method: 'POST'
-        });
+            method: 'DELETE'
+        }).then(res => res.text);
     }
 }
 

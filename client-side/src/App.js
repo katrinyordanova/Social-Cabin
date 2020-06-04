@@ -3,7 +3,6 @@ import './App.scss';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import Main from './components/site/Main/Main';
 import Navigation from './components/site/Navigation/Navigation';
-import Footer from './components/site/Footer/Footer';
 import Register from './components/user/Register/Register';
 import Login from './components/user/Login/Login';
 // import ViewProfile from './components/profile/ViewProfile/ViewProfile';
@@ -91,7 +90,6 @@ class App extends Component {
                 </Switch>
               </Main>
             </div>
-            <Footer />
           </div>
           <ToastContainer
           position="top-center"

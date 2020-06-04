@@ -1,4 +1,4 @@
-nav .ListItem, footer .ListItem {
+nav .ListItem {
     display: inline-block;
     height: auto;
     cursor: pointer;
@@ -8,19 +8,8 @@ nav .ListItem, footer .ListItem {
     margin: 0.2%;
 }
 
-nav .ListItem a, footer .ListItem a {
+nav .ListItem a {
     text-decoration: none;
     color: palegoldenrod;
     letter-spacing: 3px;
-
-}
-
-footer p {
-    color: rgb(45, 163, 206); 
-    margin: 0;
-    padding: 0;
-}
-
-footer ul, nav ul { 
-    list-style: none;
 }

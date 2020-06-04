@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
-import Main from './components/site/Main/Main';
-import Navigation from './components/site/Navigation/Navigation';
+import Main from './components/core-components/Main/Main';
+import Navigation from './components/core-components/Navigation/Navigation';
 import Register from './components/user/Register/Register';
 import Login from './components/user/Login/Login';
 // import ViewProfile from './components/profile/ViewProfile/ViewProfile';

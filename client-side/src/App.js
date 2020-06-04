@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import Main from './components/site/Main/Main';
 import Navigation from './components/site/Navigation/Navigation';

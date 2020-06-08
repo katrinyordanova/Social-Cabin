@@ -1,5 +1,4 @@
-nav .ListItem {
-    display: inline-block;
+/* nav .list-item {
     height: auto;
     cursor: pointer;
     vertical-align: top;
@@ -8,8 +7,8 @@ nav .ListItem {
     margin: 0.2%;
 }
 
-nav .ListItem a {
+nav .list-item a {
     text-decoration: none;
     color: palegoldenrod;
     letter-spacing: 3px;
-}
+} */

@@ -8,7 +8,7 @@ class Navigation extends Component {
     return <nav className="navigation">
         <ul>
             <div className="navigation__logo-and-name">
-                <img className="navigation__logo-and-name__logo" src="/penguin.png" alt="penguin-logo" />
+                <img className="navigation__logo-and-name__logo" src="/logo-penguin.png" alt="penguin-logo" />
                 <p className="navigation__logo-and-name__name">Social Penguin</p>
             </div>
             <div className="navigation__links">

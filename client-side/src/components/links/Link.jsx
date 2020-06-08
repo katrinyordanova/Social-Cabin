@@ -3,7 +3,7 @@ import './Link.css';
 import { Link as ReactLinkDomLink } from 'react-router-dom';
 
 function Link({ to, children }) {
-    return <li className="ListItem">
+    return <li className="list-item">
         <ReactLinkDomLink to={to}>{children}</ReactLinkDomLink>
     </li>
 }

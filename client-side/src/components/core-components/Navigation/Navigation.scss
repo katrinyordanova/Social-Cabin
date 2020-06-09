@@ -1,11 +1,12 @@
 .navigation,
 ul,
-.navigation__logo-and-name,
-.navigation__links {
+.navigation__left-side,
+.navigation__right-side {
     display: flex;
 }
 
 .navigation {
+    margin: auto;
     width: 100%;
     background-color:rgb(135, 189, 216);
     position: fixed;
@@ -13,25 +14,58 @@ ul,
     height: 4.5em;
     color: rgb(248, 248, 248);
 
-    &__logo-and-name__logo {
-        margin: 1em 0 0 2em;
+    &__left-side__logo {
+        margin: 1em;
         width: 2.8em;
         height: 2.5em;
 
-        @media screen and (max-width: 500px) {
-            margin: 1.5em 0 0 1em;
+        @media screen and (max-width: 700px) {
+            margin: 1.5em 0 0 2em;
             width: 2em;
-            height: 2em;
+            height: 2.5em;
         }
     }
 
-    &__logo-and-name__name {
+    &__left-side__name {
         font-size: 2em;
-        margin: 0.63em 0 0 0.3em;
-
-        @media screen and (max-width: 500px) {
+        margin: 0.56em 0 0 -.1em;
+        display: inline-flex;
+        
+        @media screen and (max-width: 1040px) {
+            width: 3.5em;
+            text-align: center;
             font-size: 1.6em;
-            margin: 1.1em 0 0 0.4em;
+            margin: 0.25em 0 0 .9em;
+        }
+    }
+
+    &__right-side {
+        position: absolute;
+        right: 5em;
+        margin-top: 1.4em;
+        
+        &__button {
+            display: none;
+        }
+
+        @media screen and (max-width: 700px) {
+            display: none;
+            right: 0;
+            margin: 4.4em auto;
+            width: 100%;
+            background-color: rgb(135, 189, 216);
+
+            &__button {
+                
+                display: block;
+                margin: 0.2em 0 0 3.5em;
+                font-size: 1.8em;
+                background-color: rgb(135, 189, 216);
+            }
+
+            &__button:focus {
+                outline: none;
+            }
         }
     }
 }

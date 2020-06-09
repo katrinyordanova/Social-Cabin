@@ -14,9 +14,9 @@ export default function GuestHomepage() {
             <h1>Excited?</h1>
             <h1>Let's get started!</h1>
         </div> */}
-        <div className="GuestHomepageButtons">
+        {/* <div className="GuestHomepageButtons">
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
-        </div>
+        </div> */}
     </div>
 }

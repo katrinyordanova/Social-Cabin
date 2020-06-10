@@ -1,12 +1,9 @@
 .navigation__link {
     margin-left: 1em;
-    
-    
+
     @media screen and (max-width: 700px) {
         width: 8em;
-        text-align: left;
-        margin: 1em auto;
-
+        margin: auto;
     }
 }
 

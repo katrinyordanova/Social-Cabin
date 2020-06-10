@@ -1,22 +1,21 @@
 import React from 'react';
-import './GuestHomepage.css';
+import './GuestHomepage.scss';
 import Link from '../../links/Link';
 
 export default function GuestHomepage() {
-    return <div className="GuestHomepage">
-        <div className="GuestHomepageGif">
-            {/* <img src="/happy-penguin.gif" alt="happy-penguin"/> */}
+    return <div className="guest-homepage">
+        <div className="guest-homepage__title">
+            <h1>Hello and welcome to Social Penguin!</h1>
         </div>
-        {/* <div className="GuestHomepageTitle">
-            <h1>Hello there!</h1>
-            <h1>Welcome to Social Penguin!</h1>
-            <br/>
-            <h1>Excited?</h1>
-            <h1>Let's get started!</h1>
-        </div> */}
-        {/* <div className="GuestHomepageButtons">
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-        </div> */}
+        <div className="guest-homepage__options">
+            <div className="guest-homepage__options__login">
+                <p>Have a profile?</p>
+                <Link to="/login">Login</Link>
+            </div>
+            <div className="guest-homepage__options__register">
+                <p>Don't have one?</p>
+                <Link to="/register">Register</Link>
+            </div>
+        </div>
     </div>
 }

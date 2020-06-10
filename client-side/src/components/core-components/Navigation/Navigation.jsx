@@ -25,8 +25,8 @@ class Navigation extends Component {
     return <nav className="navigation">
         <ul>
             <div className="navigation__left-side">
-                <img className="navigation__left-side__logo" src="/logo-penguin.png" alt="penguin-logo" />
-                <p className="navigation__left-side__name">Social Penguin</p>
+                <img className="navigation__left-side__logo" src="/d.png" alt="cabin-logo" />
+                <p className="navigation__left-side__name">Social Cabin</p>
             </div>
             <div className="navigation__right-side">
                 { !isLogged && <Link to='/login'><FontAwesomeIcon icon={ faSignInAlt }></FontAwesomeIcon> Login</Link> }

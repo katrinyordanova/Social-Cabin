@@ -44,20 +44,18 @@ export default class Register extends Component {
         return <div className="container">
             <h1 className="container__header">Register</h1>
             <form className="container__form">
-                <div>
-                    <div className="container__form__username">
-                        <label>Username</label>
-                        <input type="text" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleChange} />
-                    </div>
-                    <div className="container__form__password">
-                        <label>Password</label>
-                        <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
-                    </div>
-                    <div className="container__form__confirm-password">
-                        <label>Confirm Password</label>
-                        <input type="password" name="confirmPassword" placeholder="Enter confirm password" value={this.state.confirmPassword} onChange={this.handleChange} />
-                    </div>
-                </div>    
+                <div className="container__form__username">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleChange} />
+                </div>
+                <div className="container__form__password">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
+                </div>
+                <div className="container__form__confirm-password">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirmPassword" placeholder="Enter confirm password" value={this.state.confirmPassword} onChange={this.handleChange} />
+                </div>
                 <a className="container__form__submit-button" onClick={this.handleSubmit}>Submit</a>
             </form>
         </div>

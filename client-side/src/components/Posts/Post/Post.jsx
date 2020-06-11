@@ -1,8 +1,8 @@
 import React from 'react';
-import './Post.css';
+import './Post.scss';
 
 function Post({ children }) {
-    return <div className="Post" >
+    return <div className="posts__post">
         {children}
     </div>
 }

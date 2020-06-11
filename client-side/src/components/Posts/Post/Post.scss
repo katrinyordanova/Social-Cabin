@@ -1,0 +1,28 @@
+.posts {
+    width: 40em;
+    border-radius: 1em;
+    color: rgb(248, 248, 248);
+    
+    &__post {
+        margin-bottom: 1.5em;
+        background: rgb(21, 70, 82);
+        border-radius: .5em;
+        padding: .8em;
+    }
+
+    &__post__title {
+        text-decoration: underline;
+        font-size: 1.6em;
+        padding-bottom: .3em;
+    }
+
+    &__post__description {
+        font-size: 1.4em;
+        padding-bottom: .3em;
+    }
+
+    &__post__author {
+        padding-bottom: .3em;
+        font-size: 1.3em;
+    }
+}

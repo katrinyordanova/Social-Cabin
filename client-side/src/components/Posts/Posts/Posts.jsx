@@ -1,6 +1,6 @@
-import React, { Component} from 'react';
-import './Posts.css';
+import React, { Component } from 'react';
 import Post from '../Post/Post';
+import './Posts.scss';
 import postService from '../../../services/postService';
 
 export default class Posts extends Component {
@@ -20,16 +20,16 @@ export default class Posts extends Component {
 
         return <div>
             {posts ? 
-                <div className="Posts">
+                <div className="posts">
                     {posts.map((post) =>
-                    <Post className="Post" key={post._id} >
-                    <div className="PostTitle">{post.title}</div>
-                    <div className="PostDescription">{post.description}</div>
-                    <div className="PostAuthor">By: {post.author[0].username}</div>
-                    {/* <div className="PostButtons">
-                        <a href={"/edit-post/" + post._id}>Edit</a>
-                        <a href={"/delete-post/" + post._id}>Delete</a>
-                    </div> */}
+                    <Post key={post._id}>
+                        <div className="posts__post__title">{post.title}</div>
+                        <div className="posts__post__description">{post.description}</div>
+                        <div className="posts__post__author">By: {post.author[0].username}</div>
+                        {/* <div className="PostButtons">
+                            <a href={"/edit-post/" + post._id}>Edit</a>
+                            <a href={"/delete-post/" + post._id}>Delete</a>
+                        </div> */}
                     </Post>)}
                 </div> : <div>Loading...</div>
             }

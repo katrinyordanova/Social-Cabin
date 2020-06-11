@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../shared-styles/UserForm/UserForm.scss';
-import  Link  from '../../links/Link';
 import loginValidator from '../../../utils/userValidations/loginValidator/loginValidator';
 import { toast } from 'react-toastify';
 

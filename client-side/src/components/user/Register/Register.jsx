@@ -56,7 +56,7 @@ export default class Register extends Component {
                     <label>Confirm Password</label>
                     <input type="password" name="confirmPassword" placeholder="Enter confirm password" value={this.state.confirmPassword} onChange={this.handleChange} />
                 </div>
-                <a className="container__form__submit-button" onClick={this.handleSubmit}>Submit</a>
+                <button className="container__form__submit-button" onClick={this.handleSubmit}>Submit</button>
             </form>
         </div>
     }

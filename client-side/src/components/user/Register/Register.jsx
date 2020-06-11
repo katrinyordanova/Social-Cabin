@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../shared-styles/UserForm/UserForm.css';
+import '../../shared-styles/UserForm/UserForm.scss';
 import userService from '../../../services/userService';
 import registerValidator from '../../../utils/userValidations/registerValidator/registerValidator';
 import { toast } from 'react-toastify';
@@ -41,28 +41,24 @@ export default class Register extends Component {
     }
 
     render() {
-        return <div className="Register">
-            <div className="Header">
-                <h1>Register</h1>
-            </div>
-            <form className="RegisterForm">
-                <div className="InputFields">
-                    <div className="Username">
+        return <div className="container">
+            <h1 className="container__header">Register</h1>
+            <form className="container__form">
+                <div>
+                    <div className="container__form__username">
                         <label>Username</label>
                         <input type="text" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleChange} />
                     </div>
-                    <div className="Password">
+                    <div className="container__form__password">
                         <label>Password</label>
                         <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
                     </div>
-                    <div className="ConfirmPassword">
+                    <div className="container__form__confirm-password">
                         <label>Confirm Password</label>
                         <input type="password" name="confirmPassword" placeholder="Enter confirm password" value={this.state.confirmPassword} onChange={this.handleChange} />
                     </div>
                 </div>    
-                <div className="FormButton">
-                    <button type="button" onClick={this.handleSubmit}>Submit</button>
-                </div>
+                <a className="container__form__submit-button" onClick={this.handleSubmit}>Submit</a>
             </form>
         </div>
     }

@@ -1,0 +1,50 @@
+$background-color: rgb(248, 248, 248);
+
+.container__form,
+.container__header,
+.container__form__submit-button {
+    color: $background-color;
+}
+
+.container{
+    margin: 12em auto;
+    
+    &__header {
+        margin-bottom: .9em;
+    }
+    
+    
+    &__form  {
+        label {
+            display: inline-block;
+            margin-right: .5em;
+            font-size: 1.5em;
+        }
+        
+        input {
+            margin-bottom: 2em;
+            padding: .7em 1.2em;
+            border: none;
+            border-radius: 1em;
+            outline: none;
+        }
+        
+        &__submit-button{
+            font-size: 1.4em;
+            padding: .55em;
+            cursor: default;
+            border: none;
+            background: none;
+            
+            &:hover {
+                background: rgb(13, 56, 65);
+                border-radius: 1em;
+                padding: .55em;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }   
+}

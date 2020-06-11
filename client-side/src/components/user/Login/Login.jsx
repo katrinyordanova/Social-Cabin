@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../../shared-styles/UserForm/UserForm.css';
+import '../../shared-styles/UserForm/UserForm.scss';
+import  Link  from '../../links/Link';
 import loginValidator from '../../../utils/userValidations/loginValidator/loginValidator';
 import { toast } from 'react-toastify';
 
@@ -36,24 +37,18 @@ class Login extends  Component {
     }
 
     render() {
-        return <div className="Login">
-            <div className="Header">
-                <h1>Login</h1>
-            </div>
-            <form className="LoginForm">
-                <div className="InputFields">
-                    <div className="Username">
-                        <label>Username</label>
-                        <input type="text" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleChange} />
-                    </div>
-                    <div className="Password">
-                        <label>Password</label>
-                        <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
-                    </div>
+        return <div className="container">
+            <h1 className="container__header">Login</h1>
+            <form className="container__form">
+                <div className="container__form__username">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter username" value={this.state.username} onChange={this.handleChange} />
                 </div>
-                <div className="FormButton">
-                    <button type="button" onClick={this.handleSubmit}>Submit</button>
+                <div className="container__form__password">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
                 </div>
+                <button className="container__form__submit-button" onClick={this.handleSubmit}>Submit</button>
             </form>
         </div>
     }

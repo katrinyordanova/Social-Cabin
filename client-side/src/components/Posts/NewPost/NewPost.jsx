@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './NewPost.css';
 import '../../shared-styles/ProfileAndPostForms/ProfileAndPostForms.css';
-import '../../shared-styles/UserForm/UserForm.css';
+import '../../shared-styles/UserForm/UserForm.scss';
 import postService from '../../../services/postService';
 import newPostValidator from '../../../utils/postValidations/createPost/createPost';
 

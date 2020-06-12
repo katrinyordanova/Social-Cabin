@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import './NewPost.css';
-import '../../shared-styles/ProfileAndPostForms/ProfileAndPostForms.css';
-import '../../shared-styles/UserForm/UserForm.scss';
+import './NewPost.scss';
 import postService from '../../../services/postService';
 import newPostValidator from '../../../utils/postValidations/createPost/createPost';
 
@@ -27,7 +25,6 @@ class NewPost extends Component {
         event.preventDefault();
         const title = this.state.title;
         const description = this.state.description;
-        // const image = this.fileInput.current.files[0].name;
         if(newPostValidator(title, description)) {
             const data = { title , description };
             postService.create(data).then(() => {
@@ -37,26 +34,18 @@ class NewPost extends Component {
     }
 
     render() {
-        return <div className="NewPost">
-            <div className="Heading">
-                <h1>Create a new post</h1>
-            </div>
-            <form>
-                <div>
-                    <label>Title</label>
-                    <input type="text" name="title" placeholder="Write a title" value={this.props.title} onChange={this.handleChange} />
+        return <div className="new-post">
+            <h1 className="new-post__heading">Create a new post</h1>
+            <form className="new-post__form">
+                <div className="new-post__form__title">
+                    <label className="new-post__form__title__label">Title</label>
+                    <input className="new-post__form__title__input" type="text" name="title" placeholder="Write a title" value={this.props.title} onChange={this.handleChange} />
                 </div>
-                <div className="Description">
-                    <label>Description</label>
-                    <textarea name="description" placeholder="What's on your mind?" value = {this.state.value} onChange = {this.handleChange} cols="40" rows="10" />
+                <div className="new-post__form__description">
+                    <label className="new-post__form__description__label">Description</label>
+                    <textarea className="new-post__form__description__textarea" placeholder="What's on your mind?" value = {this.state.value} onChange = {this.handleChange} cols="40" rows="10" />
                 </div>
-                {/* <div className="UploadFile">
-                    <label>Upload File</label>
-                    <input type="file" ref={this.fileInput} />
-                </div> */}
-                <div>
-                    <button type="button" onClick={this.handleSubmit}>Submit</button>
-                </div>
+                <button className="new-post__form__submit-button" type="button" onClick={this.handleSubmit}>Submit</button>
             </form>
         </div>
     }

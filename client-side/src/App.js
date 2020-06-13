@@ -12,7 +12,6 @@ import NewPost from './components/posts/NewPost/NewPost';
 // import MyPosts from './components/posts/MyPosts/MyPosts';
 // import EditPost from './components/posts/EditPost/EditPost';
 // import DeletePost from './components/posts/DeletePost/DeletePost';
-import Contacts from './components/site/Contacts/Contacts';
 import AboutUs from './components/site/AboutUs/AboutUs';
 import Logout from './components/user/Logout/Logout';
 import GuestHomepage from './components/homepage/GuestHomepage/GuestHomepage';
@@ -84,7 +83,6 @@ class App extends Component {
                   {/* <Route path="/edit-post/:id" exact render={render(EditPost, { isLogged }, false)} />
                   <Route path="/delete-post/:id" exact render={render(DeletePost, { isLogged }, false)} />
                   <Route path="/my-posts" exact render={render(MyPosts, { isLogged }, false)} /> */}
-                  <Route path="/contacts" exact render={render(Contacts, { isLogged }, false)} />
                   <Route path="/about-us" exact render={render(AboutUs, { isLogged }, false)} />
                   <Route path="*" exact render={render(NotFound, { isLogged })} />
                 </Switch>

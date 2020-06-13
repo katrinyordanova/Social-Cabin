@@ -3,7 +3,7 @@ import './Navigation.scss';
 import Link from '../../links/Link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faCashRegister, faIgloo, faBars,
-         faPlus, faSignOutAlt, faMapSigns, faMitten } from "@fortawesome/free-solid-svg-icons";
+         faPlus, faSignOutAlt, faMitten } from "@fortawesome/free-solid-svg-icons";
 
 class Navigation extends Component { 
     constructor(props) {
@@ -34,7 +34,6 @@ class Navigation extends Component {
                 { isLogged && <Link to='/'><FontAwesomeIcon icon={ faIgloo }></FontAwesomeIcon> Home</Link> }
                 { isLogged && <Link to='/new-post'><FontAwesomeIcon icon={ faPlus }></FontAwesomeIcon> New Post</Link> }
                 { isLogged && <Link to='/logout'><FontAwesomeIcon icon={ faSignOutAlt }></FontAwesomeIcon> Logout</Link> }
-                { isLogged && <Link to='/contacts'><FontAwesomeIcon icon={ faMapSigns }></FontAwesomeIcon> Contacts</Link> }
                 { isLogged && <Link to='/about-us'><FontAwesomeIcon icon={ faMitten }></FontAwesomeIcon> About us</Link> }
                 {/* { isLogged && <Link to='/view-profile'>Profile</Link> }
                 { isLogged && <Link to='/my-posts'>My Posts</Link> } */}

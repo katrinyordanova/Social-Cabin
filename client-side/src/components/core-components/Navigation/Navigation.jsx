@@ -3,7 +3,7 @@ import './Navigation.scss';
 import Link from '../../links/Link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faCashRegister, faIgloo, faBars,
-         faPlus, faSignOutAlt, faMitten } from "@fortawesome/free-solid-svg-icons";
+         faPlus, faUserEdit, faSignOutAlt, faMitten } from "@fortawesome/free-solid-svg-icons";
 
 class Navigation extends Component { 
     constructor(props) {
@@ -33,10 +33,10 @@ class Navigation extends Component {
                 { !isLogged && <Link to='/register'><FontAwesomeIcon icon={ faCashRegister }></FontAwesomeIcon> Register</Link> }
                 { isLogged && <Link to='/'><FontAwesomeIcon icon={ faIgloo }></FontAwesomeIcon> Home</Link> }
                 { isLogged && <Link to='/new-post'><FontAwesomeIcon icon={ faPlus }></FontAwesomeIcon> New Post</Link> }
+                { isLogged && <Link to='/my-posts'><FontAwesomeIcon icon={ faUserEdit }></FontAwesomeIcon> My Posts</Link> } 
                 { isLogged && <Link to='/logout'><FontAwesomeIcon icon={ faSignOutAlt }></FontAwesomeIcon> Logout</Link> }
                 { isLogged && <Link to='/about-us'><FontAwesomeIcon icon={ faMitten }></FontAwesomeIcon> About us</Link> }
-                {/* { isLogged && <Link to='/view-profile'>Profile</Link> }
-                { isLogged && <Link to='/my-posts'>My Posts</Link> } */}
+                {/* { isLogged && <Link to='/view-profile'>Profile</Link> */}
             </div>
             <button className="navigation__right-side__button" onClick={this.handleClick}>
                 <FontAwesomeIcon icon={ faBars }></FontAwesomeIcon>

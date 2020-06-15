@@ -3,12 +3,13 @@
     color: rgb(248, 248, 248);
 
     &__heading {
-        margin: .5em auto;
+        margin: 0 auto .9em auto;
         cursor: default;
-        background-color: rgb(61, 71, 63);
         width: 10em;
+        border-left: 2px solid rgb(194, 177, 118);
+        border-right: 2px solid rgb(194, 177, 118);
         padding: .3em;
-        border-radius: .4em;
+        border-radius: .3em;
     }
 
     &__form {
@@ -56,6 +57,5 @@
                 outline: none;
             }
         }
-    }
-    
+    }  
 }

@@ -16,6 +16,24 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
 }
 
+body::-webkit-scrollbar {
+  width: .8em;
+  background:rgb(42, 49, 66);
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 60px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background:rgb(53, 83, 83);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background:rgb(66, 97, 97);
+}
+
 li {
   list-style: none;
 }

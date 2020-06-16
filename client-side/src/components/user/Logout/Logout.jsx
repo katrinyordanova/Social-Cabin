@@ -1,5 +1,6 @@
 export default function Logout({ logout, history }) {
   logout(history);
+  localStorage.removeItem('user');
   return null;
 }
 // export default class Logout extends Component {

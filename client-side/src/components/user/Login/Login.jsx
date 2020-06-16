@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../shared-styles/UserForm/UserForm.scss';
+import userService from '../../../services/userService';
 import loginValidator from '../../../utils/userValidations/loginValidator/loginValidator';
 import { toast } from 'react-toastify';
 
@@ -27,8 +28,12 @@ class Login extends  Component {
 
         if (loginValidator(username, password)) {
             this.setState({ isLogged : true });
-            const data = {username, password};
-            this.props.login(data, this.props.history).catch(error => {
+            const data = { username, password };
+            userService.login(data).then(() => {
+                localStorage.setItem('user', username);
+                this.props.login(data, this.props.history)
+            })
+            .catch(error => {
                 toast.error('Invalid username or password!');
                 return;
             });

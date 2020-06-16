@@ -30,9 +30,10 @@ export default class Register extends Component {
         const confirmPassword = this.state.confirmPassword; 
         
         if(registerValidator(username, password, confirmPassword)) {
-            const data = {username, password};
+            const data = { username, password };
             userService.register(data).then(() => {
-                this.props.history.push('/login');        
+                localStorage.setItem('user', username);
+                this.props.history.push('/login');      
             }).catch(() => {
                 toast.error('The username is already taken');
                 return;

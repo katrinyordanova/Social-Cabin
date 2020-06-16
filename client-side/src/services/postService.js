@@ -24,7 +24,7 @@ const postService = {
         }).then(res => res.text());
     },
     edit: function(id, data) {
-        return fetch (`http://localhost:8888/api/post/edit-post/${aid}`, {
+        return fetch (`http://localhost:8888/api/post/edit-post/${id}`, {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {

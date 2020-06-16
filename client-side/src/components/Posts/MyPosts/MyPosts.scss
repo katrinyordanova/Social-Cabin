@@ -1,5 +1,33 @@
-.MyPosts h1 {
-    font-size: 46px;
-    text-decoration: underline;
-    color: rgba(167, 9, 9, 0.452)
+.my-posts {
+    color: rgb(248, 248, 248);
+    margin-top: 7em;
+    cursor: default;
+
+    &__heading {
+        margin-bottom: .8em;
+    }
+    
+    &__posts {
+        width: 40em;
+        margin: auto;
+
+        &__title {
+            margin-bottom: .5em;
+            font-size: 1.5em;
+            text-decoration: underline;
+        }
+
+        &__description {
+            font-size: 1.4em;
+        }
+    }
+
+    &__no-posts {
+        width: 8em;
+        margin: auto;
+        font-size: 1.7em;
+        border-right: 2px solid rgb(248, 248, 248);
+        border-left: 2px solid rgb(248, 248, 248);
+        border-radius: .3em;
+    }
 }

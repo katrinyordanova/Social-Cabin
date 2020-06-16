@@ -4,6 +4,10 @@ const postService = {
             return fetch ('http://localhost:8888/api/post/all-posts')
             .then(res => res.json());
         },
+        myPosts: function(id) {
+            return fetch (`http://localhost:8888/api/post/my-posts/${id}`)
+            .then(res => res.json());
+        },
         one: function(id) {
             return fetch (`http://localhost:8888/api/post/${id}`)
             .then(res => res.text());
@@ -20,7 +24,7 @@ const postService = {
         }).then(res => res.text());
     },
     edit: function(id, data) {
-        return fetch (`http://localhost:8888/api/post/edit-post/${id}`, {
+        return fetch (`http://localhost:8888/api/post/edit-post/${aid}`, {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {

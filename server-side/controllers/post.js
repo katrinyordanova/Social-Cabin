@@ -3,9 +3,18 @@ const models = require('../models');
 module.exports = {
     get: {
         many: (req, res, next) => {
-                models.post.find().populate('author').populate('likes')
+                models.post.find().populate('author')
                 .then((posts) => res.send(posts)
             ).catch(next);
+        },
+        myPosts: (req, res, next) => {
+            const username = req.params.id;
+
+            models.user.findOne({ username: username })
+            .then((user) => { 
+                models.post.find({ author: user._id })
+                .then((posts) => res.send(posts));
+            })
         },
         one: (req, res, next) => {
             const id = req.params.id;

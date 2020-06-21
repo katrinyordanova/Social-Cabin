@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Post from '../Post/Post';
 import './Posts.scss';
+import Link from '../../links/Link';
 import postService from '../../../services/postService';
 
 export default class Posts extends Component {
@@ -26,10 +27,10 @@ export default class Posts extends Component {
                         <div className="posts__post__title">{post.title}</div>
                         <div className="posts__post__description">{post.description}</div>
                         <div className="posts__post__author">By: {post.author[0].username}</div>
-                        {/* <div className="PostButtons">
-                            <a href={"/edit-post/" + post._id}>Edit</a>
-                            <a href={"/delete-post/" + post._id}>Delete</a>
-                        </div> */}
+                        <div className="PostButtons">
+                            <Link to={"/edit-post/" + post._id}>Edit</Link>
+                            <Link to={"/delete-post/" + post._id}>Delete</Link>
+                        </div>
                     </Post>)}
                 </div> : <div>Loading...</div>
             }

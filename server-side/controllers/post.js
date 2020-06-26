@@ -18,27 +18,27 @@ module.exports = {
         },
         one: (req, res, next) => {
             const id = req.params.id;
-        
-            models.post.findOne(id)
-            .then((posts) => res.send(posts))
+            
+            models.post.findById(id)
+            .then((post) => res.send(post))
             .catch(next);
         }
     },
     post: (req, res, next)  => {
-        const { title, description } = req.body;
-        const { _id } = req.user;
-        
-        models.post.create({ title, description, author: _id })
-            .then((createdPost) => {
-                return Promise.all([
-                    models.user.updateOne({ _id }, { $push: { posts: createdPost }}),
-                    models.post.findOne({ _id: createdPost._id })
-                ]);
-            })
+        const { title, description, username } = req.body;
+        models.user.findOne({ username: username }).then((user) => {
+            models.post.create({ title, description, author: user._id })
+                .then((createdPost) => {
+                    return Promise.all([
+                        models.user.updateOne({ _id: user._id }, { $push: { posts: createdPost }}),
+                        models.post.findOne({ _id: createdPost._id })
+                    ]);
+                })
             .then(([ modifiedObject, postObject]) => {
                 res.send(postObject);
             })
             .catch(next);
+        })
     },
     put: (req, res, next) => {
         const { title, description } = req.body;

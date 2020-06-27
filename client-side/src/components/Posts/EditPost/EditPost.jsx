@@ -7,13 +7,11 @@ import editPostValidator from '../../../utils/postValidations/editPost';
 export default class EditPost extends Component {
     constructor(props) {
         super(props);
-        
+        this.state = {
+            post: null
+        }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    
-    state = {
-        post: null
     }
 
     componentDidMount() {
@@ -48,7 +46,7 @@ export default class EditPost extends Component {
 
         return <div className="edit-post">
             <h1 className="edit-post__heading">Edit post</h1>
-            <form className="edit-post__form">
+            <form className="edit-post__form" id="edit-post-background">
             {post ?
                 <div>
                     <Post key={post._id}>
@@ -58,7 +56,7 @@ export default class EditPost extends Component {
                         </div>
                         <div className="edit-post__form__description">
                             <label className="edit-post__form__description__label">Description</label>
-                            <textarea className="edit-post__form__description__textarea" defaultValue={post.description} onChange={this.handleChange} cols="40" rows="10" />
+                            <textarea className="edit-post__form__description__textarea" name="description" defaultValue={post.description} onChange={this.handleChange} cols="40" rows="10" />
                         </div>
                         <button className="edit-post__form__submit-button" type="button" onClick={this.handleSubmit}>Submit</button>
                     </Post>

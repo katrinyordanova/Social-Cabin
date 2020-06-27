@@ -8,8 +8,8 @@ export default function newPostValidator(title, description) {
     }if(!title || title.length < 5) {
         toast.error('Title must be at least 5 characters long'); 
         return false;
-    }if(description.length < 20) {
-        toast.error('Description must be at least 20 characters long'); 
+    }if(description.length < 5) {
+        toast.error('Description must be at least 5 characters long'); 
         return false;
     }
     return true;

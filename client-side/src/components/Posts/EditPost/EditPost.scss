@@ -1,0 +1,66 @@
+.edit-post {
+    color: rgb(248, 248, 248);
+    margin-top: 7em;
+    cursor: default;
+    
+    &__heading {
+        margin: .9em auto;
+        width: 7em;
+        border-left: 2px solid rgb(194, 177, 118);
+        border-right: 2px solid rgb(194, 177, 118);
+        padding: .3em;
+        border-radius: .3em;
+    }
+    
+    &__form {
+        width: 30em;
+        margin: 0 auto;
+        
+        &__title,
+        &__description {
+            margin-bottom: 1em;
+            
+            &__label{
+                display: block;
+                font-size: 1.5em;
+                margin-bottom: .4em;
+            }
+            
+            &__input,
+            &__textarea {
+                font-size: 1.2em;
+                border: 1px solid rgb(21, 70, 82);
+                border-radius: .8em;
+                outline: none;
+            }
+            
+            &__input {
+                margin-bottom: .8em;
+                padding: .4em 1.2em;
+            }
+            
+            &__textarea {
+                padding: .6em;
+            }
+        }
+        
+        &__submit-button {
+            margin-top: .5em;
+            color: rgb(248, 248, 248);
+            font-size: 1.4em;
+            padding: .6em;
+            border: none;
+            background: rgb(13, 56, 65);
+            border-radius: .7em;
+            padding: .55em;
+            
+            &:hover {
+                background: rgb(21, 90, 104);
+            }
+            
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

@@ -36,7 +36,7 @@ export default class EditPost extends Component {
         if(editPostValidator(title, description)) {
             const data = { title, description };
             postService.edit(this.state.post._id, data).then(() => {
-                this.props.history.push('/');
+                this.props.history.push('/my-posts');
             });
         }
     }

@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import Post from '../Post/Post';
 import './Posts.scss';
-import Link from '../../links/Link';
 import postService from '../../../services/postService';
 
 export default class Posts extends Component {
     state = {
         posts: null
     }
-    textInput = null;
 
     componentDidMount() {
         postService.get.many().then(posts => {

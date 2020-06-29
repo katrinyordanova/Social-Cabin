@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './MyPosts.scss';
 import Post from '../Post/Post';
+import Link from '../../links/Link';
 import postService from '../../../services/postService';
 
 export default class MyPosts extends Component {
@@ -30,6 +31,10 @@ export default class MyPosts extends Component {
                         <Post key={post._id}>
                             <div className="my-posts__posts__title">{post.title}</div>
                             <div className="my-posts__posts__description">{post.description}</div>
+                            <div className="PostButtons">
+                                <Link to={"/edit-post/" + post._id}>Edit</Link>
+                                <Link to={"/delete-post/" + post._id}>Delete</Link>
+                            </div>
                         </Post>)
                     }
                 </div> : <div><p className="my-posts__no-posts">No posts yet</p></div>

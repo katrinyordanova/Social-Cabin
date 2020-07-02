@@ -7,6 +7,6 @@ router.get('/my-posts/:id', controllers.post.get.myPosts);
 router.get('/:id', controllers.post.get.one);
 router.post('/create-post', controllers.post.post);
 router.put('/edit-post/:id', controllers.post.put);
-router.delete('/delete-post/:id', auth(), controllers.post.delete);
+router.delete('/delete-post/:id', controllers.post.delete);
 
 module.exports = router;

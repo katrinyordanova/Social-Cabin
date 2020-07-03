@@ -32,7 +32,7 @@ const postService = {
             }
         }).then(res => res.json());
     },
-    delete: function(id, data) {
+    delete: function(id) {
         return fetch (`http://localhost:8888/api/post/delete-post/${id}`, {
             method: 'DELETE'
         }).then(res => res.text);

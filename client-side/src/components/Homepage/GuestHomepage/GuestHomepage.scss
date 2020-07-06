@@ -31,15 +31,18 @@
         
         &__login {
             margin-right: 2em;
-            
-            @media screen and (max-with: 1010px) {
-                width: 0;
+        }
+
+        div.guest-homepage__options__login > li {
+            @media screen and (max-width: 1010px) {
+                width: 5.5em;
             }
-            
-            @media screen and (max-width: 470px) {
-                margin-right: 1em;  
+        }
+
+        div.guest-homepage__options__register > li {
+            @media screen and (max-width: 1010px) {
+                width: 7.5em;
             }
         }
     }
 }
-

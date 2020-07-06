@@ -32,6 +32,10 @@
         &__login {
             margin-right: 2em;
             
+            @media screen and (max-with: 1010px) {
+                width: 0;
+            }
+            
             @media screen and (max-width: 470px) {
                 margin-right: 1em;  
             }

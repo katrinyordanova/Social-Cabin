@@ -2,7 +2,7 @@
     color: rgb(248, 248, 248);
     margin-top: 7em;
     cursor: default;
-
+    
     &__heading {
         margin-bottom: .8em;
     }
@@ -44,6 +44,56 @@
                     top: -1.6em;
                 }
             }
+        }
+
+        &__show-deleteMessage {
+            display: block;
+            width: 20em;
+            height: 10em;
+            padding: 1.5em;
+            background: rgb(61, 107, 119);
+            border: 1px solid rgb(56, 97, 107);
+            border-radius: 2em;
+            position: fixed;
+            top: 18em;
+            left: 38em;
+
+            &__delete-button,
+            &__cancel-button {
+                font-size: 1.3em;
+                margin-top: 1.3em;
+                border-radius: .7em;
+                padding: .5em;
+                border: none;
+                color: rgb(255, 255, 255);
+                background: rgb(94, 135, 146);
+            }
+            
+            &__delete-button:hover,
+            &__cancel-button:hover {
+                background: rgb(106, 153, 163);
+                padding: .5em;
+                border: none;
+                border-radius: .7em;
+            }
+
+            &__delete-button:focus,
+            &__cancel-button:focus {
+                outline: none;
+            }
+
+            &__delete-button {
+                margin-right: 1em;
+                background: rgb(228, 99, 59);
+            }
+
+            &__delete-button:hover {
+                background: rgb(238, 78, 30);
+            }
+        }
+
+        &__hide-deleteMessage {
+            display: none;
         }
     }
 

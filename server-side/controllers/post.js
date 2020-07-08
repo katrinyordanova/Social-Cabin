@@ -40,13 +40,24 @@ module.exports = {
             .catch(next);
         })
     },
-    put: (req, res, next) => {
-        const { title, description } = req.body;
-        const id = req.params.id;
-
-        models.post.updateOne({ _id: id}, { title, description }).then((updatedPost) => {
-            res.send(updatedPost)
-        }).catch(next);
+    put: {
+        update: (req, res, next) => {
+            const { title, description } = req.body;
+            const id = req.params.id;
+    
+            models.post.updateOne({ _id: id }, { title, description }).then((updatedPost) => {
+                res.send(updatedPost)
+            }).catch(next);
+        },
+        like: (req, res, next) => {
+            const { like } = req.body;
+            console.log((req.body)); return;
+            const id = req.params.id;
+    
+            models.post.updateOne({ _id: id }, { like: like + 1 }).then((updatedPost) => {
+                res.send(updatedPost);
+            }).catch(next);
+        }
     },
     delete: (req, res, next) => {
         const { title, description } = req.body;
@@ -56,5 +67,5 @@ module.exports = {
         .then((deletedPost) => {
             res.send(deletedPost);
         }).catch(next);
-    }
+    },
 }

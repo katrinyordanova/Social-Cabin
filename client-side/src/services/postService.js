@@ -35,7 +35,12 @@ const postService = {
     delete: function(id) {
         return fetch (`http://localhost:8888/api/post/delete-post/${id}`, {
             method: 'DELETE'
-        }).then(res => res.text);
+        }).then(res => res.text());
+    },
+    like: function(id) {
+        return fetch (`http://localhost:8888/api/post/like-post/${id}`, {
+            method: 'PUT'
+        }).then(res => res.text());
     }
 }
 

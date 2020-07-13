@@ -13,8 +13,7 @@ export default class Posts extends Component {
 
     componentDidMount() {
         postService.get.many().then(posts => {
-            const likes = posts.map((post) => post.like);
-            this.setState({ posts, like: likes });// ok
+            this.setState({ posts });
         });
     }
 

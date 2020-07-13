@@ -9,21 +9,18 @@ export default class Posts extends Component {
         this.state = {
             posts: null
         }
-        this.likePost = this.likePost.bind(this);
     }
 
     componentDidMount() {
         postService.get.many().then(posts => {
-            this.setState({ posts });
+            const likes = posts.map((post) => post.like);
+            this.setState({ posts, like: likes });// ok
         });
-    }
-
-    likePost(id) {
-
     }
 
     render() {
         const { posts } = this.state;
+
         return <div>
             {posts ? 
                 <div className="posts">
@@ -33,7 +30,6 @@ export default class Posts extends Component {
                                 <div className="posts__post__title">{post.title}</div>
                                 <div className="posts__post__description">{post.description}</div>
                                 <div className="posts__post__author">By: {post.author[0].username}</div>
-                                <button onClick={() => { this.likePost(post._id) }}>Like</button>{post.like}
                             </Post>
                         )
                     }

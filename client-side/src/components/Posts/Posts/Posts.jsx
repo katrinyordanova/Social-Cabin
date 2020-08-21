@@ -4,13 +4,13 @@ import './Posts.scss';
 import postService from '../../../services/postService';
 
 export default function Posts() {
-    const [ posts, setPosts ] = useState([]);
+    const [ posts, setPosts ] = useState(null);
 
     useEffect(() => {
         postService.get.many().then(posts => {
             setPosts(posts);
         });
-    });
+    }, []);
 
     return <div>
         { posts ? 

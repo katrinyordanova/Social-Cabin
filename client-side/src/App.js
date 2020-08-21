@@ -56,7 +56,7 @@ class App extends Component {
   logout = (history) => {
       userService.logout().then(() => {
       this.setState({ isLogged: false });
-      history.push('/');
+      history.push('/homepage');
       return null;
     });
   }
@@ -89,7 +89,7 @@ class App extends Component {
           </div>
           <ToastContainer
           position="top-center"
-          autoClose={5000}
+          autoClose={4000}
           hideProgressBar
           newestOnTop
           closeOnClick

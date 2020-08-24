@@ -46,8 +46,9 @@ class App extends Component {
     this.state = { isLogged };
   }
   
-  login = (data, history) => {
+  login = (history, data) => {
     return userService.login(data).then(() => {
+      localStorage.setItem('user', data.username);
       this.setState({ isLogged: true });
       history.push('/');
     });

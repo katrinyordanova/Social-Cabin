@@ -1,17 +1,14 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import './Navigation.scss';
 import Link from '../../links/Link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faCashRegister, faIgloo, faBars,
          faPlus, faUserEdit, faSignOutAlt, faMitten } from "@fortawesome/free-solid-svg-icons";
 
-class Navigation extends Component { 
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }  
+const Navigation = ({ isLogged }) => {  
     
-    handleClick() {
+    console.log(isLogged);
+    const handleClick = () => {
         let links = document.getElementsByClassName('navigation__right-side')[0];
         if(links.style.display === "block" ) {
             links.style.display = "none";
@@ -20,8 +17,6 @@ class Navigation extends Component {
         }
     }
     
-    render() {
-    const { isLogged } = this.props;
     return <nav className="navigation">
         <ul>
             <div className="navigation__left-side">
@@ -36,14 +31,12 @@ class Navigation extends Component {
                 { isLogged && <Link to='/my-posts'><FontAwesomeIcon icon={ faUserEdit }></FontAwesomeIcon> My Posts</Link> } 
                 { isLogged && <Link to='/logout'><FontAwesomeIcon icon={ faSignOutAlt }></FontAwesomeIcon> Logout</Link> }
                 { isLogged && <Link to='/about-us'><FontAwesomeIcon icon={ faMitten }></FontAwesomeIcon> About us</Link> }
-                {/* { isLogged && <Link to='/view-profile'>Profile</Link> */}
             </div>
-            <button className="navigation__right-side__button" onClick={this.handleClick}>
+            <button className="navigation__right-side__button" onClick={handleClick}>
                 <FontAwesomeIcon icon={ faBars }></FontAwesomeIcon>
             </button>
         </ul>
     </nav>
-    }
 }
 
 export default Navigation;

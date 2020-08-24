@@ -3,7 +3,7 @@ import '../../shared-styles/UserForm/UserForm.scss';
 import userService from '../../../services/userService';
 import registerValidator from '../../../utils/userValidations/registerValidator/registerValidator';
 import { toast } from 'react-toastify';
-import { useFormFields } from '../../../custom-hooks/login-hook';
+import { useFormFields } from '../../../custom-hooks/update-form-fields';
 import { useHistory } from 'react-router-dom';
 
 const Register = () => {

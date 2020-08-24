@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../shared-styles/UserForm/UserForm.scss';
 import loginValidator from '../../../utils/userValidations/loginValidator/loginValidator';
-import { useFormFields } from '../../../custom-hooks/login-hook';
+import { useFormFields } from '../../../custom-hooks/update-form-fields';
 
 const Login = ({ login, history }) => {
     const [ fields, handleFieldChange ] = useFormFields({ username: '', password: '' });

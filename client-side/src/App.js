@@ -53,8 +53,8 @@ class App extends Component {
   
   logout = (history) => {
     userService.logout().then(() => {
-      this.setState({ isLogged: false });
       localStorage.removeItem('user');
+      this.setState({ isLogged: false });
       history.push('/homepage');
       return null;
     });

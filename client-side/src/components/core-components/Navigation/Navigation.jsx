@@ -6,8 +6,6 @@ import { faSignInAlt, faCashRegister, faIgloo, faBars,
          faPlus, faUserEdit, faSignOutAlt, faMitten } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = ({ isLogged }) => {  
-    
-    console.log(isLogged);
     const handleClick = () => {
         let links = document.getElementsByClassName('navigation__right-side')[0];
         if(links.style.display === "block" ) {

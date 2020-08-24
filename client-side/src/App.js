@@ -78,7 +78,9 @@ class App extends Component {
                   <Route path="/edit-post/:id" exact render={render(EditPost, { isLogged }, false)} />
                   <Route path="/my-posts" exact render={render(MyPosts, { isLogged }, false)} />
                   <Route path="/about-us" exact render={render(AboutUs, { isLogged }, false)} />
-                  <Route path="*" exact render={render(NotFound, { isLogged })} />
+                  <Route path="*" exact render={render(NotFound, { isLogged })}>
+                    <Main title="Not Found"><NotFound /></Main>
+                  </Route>
                 </Switch>
               </Main>
             </div>

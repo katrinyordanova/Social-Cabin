@@ -12,13 +12,12 @@ const EditPost = () => {
     const history = useHistory();
 
     useEffect(() => {
-        const postId = history.location.pathname.split('/')[2]
+        const postId = history.location.pathname.split('/')[2];
         postService.get.one(postId).then(post => {
-            console.log(post);
             post = JSON.parse(post);
             setPost(post);
         });
-    }, []); 
+    }, [history]); 
 
     const handleSubmit = (e) => {
         e.preventDefault();

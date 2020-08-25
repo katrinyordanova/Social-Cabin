@@ -18,7 +18,7 @@ const Navigation = ({ isLogged }) => {
     return <nav className="navigation">
         <ul>
             <div className="navigation__left-side">
-                <img className="navigation__left-side__logo" src="/cabin-logo.png" alt="cabin-logo" />
+                <img className="navigation__left-side__logo" src="pictures/cabin-logo.png" alt="cabin-logo" />
                 <p className="navigation__left-side__name">Social Cabin</p>
             </div>
             <div className="navigation__right-side">

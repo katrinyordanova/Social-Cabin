@@ -22,14 +22,14 @@ ul,
             width: 5em;
             height: 4em;
         }
-    
+        
         &__name {
             font-size: 2em;
             display: inline-block;
             margin-top: .9em;
+            cursor: default;
         }
     }
-
 
     &__right-side {
         position: absolute;

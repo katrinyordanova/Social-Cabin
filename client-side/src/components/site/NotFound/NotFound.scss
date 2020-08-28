@@ -1,9 +1,34 @@
-.NotFound img {
-    width: 20%;
-    height: auto;
-}
+.not-found {
+    &__picture {
+        margin: 9.5em auto .5em auto;
+        width: 40%;
+        height: 50%;
 
-.NotFound h2 {
-    color: brown;
-    
+        @media screen and (max-width: 1010px) {
+            width: 20em;
+        }
+    }
+    &__buttons {
+        &__guest-button,
+        &__user-button {
+            display:inline-block;
+            color: rgb(255, 255, 255);
+            font-size: 1.45em;
+            padding: .7em;
+            cursor: pointer;
+            border: none;
+            background: none;
+            background: rgb(13, 56, 65);
+            border-radius: .7em;
+            padding: .55em;
+            
+            &:hover {
+                background: rgb(21, 90, 104);
+            }
+            
+            &:focus {
+                outline: none;
+            }
+        }
+    }
 }

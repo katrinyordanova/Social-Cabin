@@ -16,12 +16,12 @@
             font-size: 1.5em;
             text-decoration: underline;
         }
-        
+
         &__description {
             font-size: 1.4em;
             margin-bottom: 2em;
         }
-        
+
         &__buttons {
             margin: -1.8em auto -1em -2em;
             font-size: 1.2em;
@@ -53,8 +53,10 @@
             background: rgb(61, 107, 119);
             border: 1px solid rgb(56, 97, 107);
             border-radius: 2em;
-            position: fixed;
-
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
             &__delete-button,
             &__cancel-button {

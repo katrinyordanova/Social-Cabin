@@ -56,7 +56,7 @@ const MyPosts = () => {
                                     onClick={() => deletePostMessage(myPost._id)}>Delete
                                 </button>
                                 <button className="my-posts__posts__show-deleteMessage__cancel-button" 
-                                    onClick={() => setDeleteMessage({ deleteMessage: false }) }>Cancel
+                                    onClick={toggleDeleteMessage}>Cancel
                                 </button>
                             </div>
                         </Post>

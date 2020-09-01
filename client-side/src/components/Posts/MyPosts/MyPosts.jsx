@@ -17,20 +17,19 @@ const MyPosts = () => {
         postService.get.myPosts(id).then(myPosts => {
             if(myPosts.length > 0) {
                 setMyPosts(myPosts);
+                console.log(myPosts);
             }else {
                 myPosts = null;
             }
-        }, []);
-    });
+        });
+    }, []);
     
-
     const deletePostMessage = (myPostId) => {
         postService.delete(myPostId).then(() => {
             const posts = myPosts.filter(post => post._id !== myPostId);
             setMyPosts(posts);
         });
     }
-
 
     return <div className="my-posts">
         <h1 className="my-posts__heading">My Posts</h1>

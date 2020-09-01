@@ -16,14 +16,14 @@
             font-size: 1.5em;
             text-decoration: underline;
         }
-
+        
         &__description {
             font-size: 1.4em;
             margin-bottom: 2em;
         }
-
+        
         &__buttons {
-            margin-right: 2.4em;
+            margin: -1.8em auto -1em -2em;
             font-size: 1.2em;
 
             li {
@@ -47,7 +47,6 @@
         }
 
         &__show-deleteMessage {
-            display: block;
             width: 20em;
             height: 10em;
             padding: 1.5em;
@@ -55,8 +54,7 @@
             border: 1px solid rgb(56, 97, 107);
             border-radius: 2em;
             position: fixed;
-            top: 18em;
-            left: 38em;
+
 
             &__delete-button,
             &__cancel-button {
